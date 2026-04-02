@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEDRINK Kulsary</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        :root{
+            --primary:#00a89d;--primary-dark:#008a80;--secondary:#ff6b35;
+            --accent:#ffd23f;--bg:#f0faf9;--card-bg:#fff;
+            --text:#1a1a2e;--text-light:#6b7280;--text-muted:#9ca3af;
+            --whatsapp:#25d366;--instagram:#e1306c;--radius:16px;
+        }
+        body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden}
+
+        /* === HERO === */
+        .hero{position:relative;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;background:linear-gradient(135deg,#0d9488 0%,#00a89d 30%,#14b8a6 60%,#2dd4bf 100%);overflow:hidden;padding:2rem 1rem}
+        .hero::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle at 30% 50%,rgba(255,255,255,.08) 0%,transparent 50%),radial-gradient(circle at 70% 80%,rgba(255,210,63,.1) 0%,transparent 40%);animation:heroGlow 8s ease-in-out infinite alternate}
+        @keyframes heroGlow{0%{transform:translate(0,0) rotate(0)}100%{transform:translate(-3%,-3%) rotate(3deg)}}
+        .bubble{position:absolute;border-radius:50%;background:rgba(255,255,255,.1);animation:floatUp linear infinite;pointer-events:none}
+        @keyframes floatUp{0%{transform:translateY(100vh) scale(0);opacity:0}10%{opacity:1}90%{opacity:1}100%{transform:translateY(-20vh) scale(1);opacity:0}}
+        .hero-content{position:relative;z-index:2}
+        .hero-logo{font-size:4rem;font-weight:900;color:#fff;text-shadow:0 4px 30px rgba(0,0,0,.15);letter-spacing:2px;animation:slideDown .8s ease-out}
+        .hero-sub{font-size:1.2rem;color:rgba(255,255,255,.9);margin:.3rem 0;font-weight:700;animation:slideDown .8s ease-out .1s both}
+        .hero-tagline{margin-top:.8rem;animation:slideDown .8s ease-out .25s both}
+        .hero-tagline .lang-kk{font-size:1.25rem;color:var(--accent);font-weight:800}
+        .hero-tagline .lang-ru{font-size:.95rem;color:rgba(255,255,255,.75);font-weight:600}
+        .hero-tagline .lang-lat{font-size:.85rem;color:rgba(255,210,63,.6);font-style:italic;font-weight:600}
+        @keyframes slideDown{from{opacity:0;transform:translateY(-30px)}to{opacity:1;transform:translateY(0)}}
+        .hero-buttons{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;margin-top:1.8rem;animation:slideDown .8s ease-out .4s both}
+        .btn{display:inline-flex;align-items:center;gap:.5rem;padding:.9rem 2rem;border-radius:50px;font-size:1rem;font-weight:700;text-decoration:none;transition:all .3s ease;border:none;cursor:pointer;font-family:inherit}
+        .btn-whatsapp{background:var(--whatsapp);color:#fff;box-shadow:0 4px 20px rgba(37,211,102,.4)}
+        .btn-whatsapp:hover{transform:translateY(-3px) scale(1.03);box-shadow:0 8px 30px rgba(37,211,102,.5)}
+        .btn-instagram{background:linear-gradient(135deg,#833ab4,#e1306c,#fd1d1d,#f77737);color:#fff;box-shadow:0 4px 20px rgba(225,48,108,.4)}
+        .btn-instagram:hover{transform:translateY(-3px) scale(1.03);box-shadow:0 8px 30px rgba(225,48,108,.5)}
+        .btn-menu{background:rgba(255,255,255,.2);color:#fff;backdrop-filter:blur(10px);border:2px solid rgba(255,255,255,.3)}
+        .btn-menu:hover{background:rgba(255,255,255,.35);transform:translateY(-3px)}
+        .scroll-indicator{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);z-index:2;animation:bounce 2s infinite;color:rgba(255,255,255,.7);font-size:1.5rem}
+        @keyframes bounce{0%,20%,50%,80%,100%{transform:translateX(-50%) translateY(0)}40%{transform:translateX(-50%) translateY(-12px)}60%{transform:translateX(-50%) translateY(-6px)}}
+
+        /* === MENU === */
+        .menu-section{padding:4rem 1rem 3rem;max-width:1200px;margin:0 auto}
+        .section-title{text-align:center;font-size:2rem;font-weight:900;color:var(--primary-dark);margin-bottom:.2rem}
+        .section-title-ru{text-align:center;font-size:1rem;color:var(--text-light);font-weight:600}
+        .section-title-lat{text-align:center;font-size:.85rem;color:var(--text-muted);font-style:italic;margin-bottom:1.5rem}
+        .tabs{display:flex;gap:.5rem;justify-content:center;flex-wrap:wrap;margin-bottom:2rem;padding:0 .5rem}
+        .tab{padding:.55rem 1.2rem;border-radius:50px;border:2px solid var(--primary);background:transparent;color:var(--primary);font-weight:700;font-size:.8rem;cursor:pointer;transition:all .3s;font-family:inherit;white-space:nowrap;line-height:1.4}
+        .tab.active,.tab:hover{background:var(--primary);color:#fff;transform:scale(1.05)}
+        .tab small{display:block;font-size:.65rem;font-weight:600;opacity:.75}
+
+        .menu-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.1rem}
+        .menu-card{background:var(--card-bg);border-radius:var(--radius);padding:1rem 1.2rem;display:flex;align-items:center;box-shadow:0 2px 15px rgba(0,0,0,.06);transition:all .35s ease;opacity:0;transform:translateY(20px);gap:.6rem}
+        .menu-card.visible{opacity:1;transform:translateY(0)}
+        .menu-card:hover{transform:translateY(-4px);box-shadow:0 8px 30px rgba(0,168,157,.15)}
+        .menu-card-icon{font-size:1.7rem;flex-shrink:0}
+        .menu-card-info{flex:1;min-width:0}
+        .menu-card-name{font-weight:800;font-size:.9rem;color:var(--text);line-height:1.3}
+        .menu-card-ru{font-size:.73rem;color:var(--text-light);margin-top:1px}
+        .menu-card-lat{font-size:.68rem;color:var(--text-muted);font-style:italic;margin-top:1px}
+        .menu-card-right{display:flex;align-items:center;gap:.5rem;flex-shrink:0}
+        .menu-card-price{font-weight:900;font-size:1rem;color:var(--primary);white-space:nowrap;background:linear-gradient(135deg,#e0faf8,#d4f5f2);padding:.35rem .6rem;border-radius:12px;text-align:center}
+        .menu-card-price span{font-size:.55rem;font-weight:600;color:var(--primary-dark);display:block}
+
+        /* Add to cart button */
+        .add-btn{width:38px;height:38px;border-radius:50%;border:2px solid var(--primary);background:#fff;color:var(--primary);font-size:1.3rem;font-weight:900;cursor:pointer;transition:all .3s;display:flex;align-items:center;justify-content:center;flex-shrink:0;line-height:1}
+        .add-btn:hover{background:var(--primary);color:#fff;transform:scale(1.15)}
+        .add-btn:active{transform:scale(.9)}
+        .add-btn.added{background:var(--primary);color:#fff;animation:popBtn .3s ease}
+        @keyframes popBtn{0%{transform:scale(1)}50%{transform:scale(1.3)}100%{transform:scale(1)}}
+
+        /* Qty control in card */
+        .qty-control{display:flex;align-items:center;gap:.3rem}
+        .qty-btn{width:30px;height:30px;border-radius:50%;border:2px solid var(--primary);background:#fff;color:var(--primary);font-size:1.1rem;font-weight:900;cursor:pointer;transition:all .2s;display:flex;align-items:center;justify-content:center}
+        .qty-btn:hover{background:var(--primary);color:#fff}
+        .qty-btn.minus-btn{border-color:#ef4444;color:#ef4444}
+        .qty-btn.minus-btn:hover{background:#ef4444;color:#fff}
+        .qty-num{font-weight:900;font-size:.95rem;min-width:20px;text-align:center;color:var(--primary)}
+
+        .badge{display:inline-block;padding:.1rem .4rem;border-radius:8px;font-size:.6rem;font-weight:700;margin-left:.2rem;vertical-align:middle}
+        .badge-hot{background:#fee2e2;color:#dc2626}
+        .badge-cold{background:#dbeafe;color:#2563eb}
+        .badge-new{background:#fef3c7;color:#d97706}
+        .category-group{display:none}
+        .category-group.active{display:block}
+        .category-header{display:flex;align-items:baseline;gap:.6rem;margin:2rem 0 1rem;padding-bottom:.7rem;border-bottom:3px solid var(--primary);flex-wrap:wrap}
+        .category-header h3{font-size:1.3rem;font-weight:800;color:var(--primary-dark)}
+        .category-header .cat-ru{font-size:.85rem;color:var(--text-light);font-weight:600}
+        .category-header .cat-lat{font-size:.78rem;color:var(--text-muted);font-style:italic}
+
+        /* === NAV === */
+        .nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(255,255,255,.95);backdrop-filter:blur(10px);box-shadow:0 2px 20px rgba(0,0,0,.08);padding:.8rem 1.5rem;display:flex;align-items:center;justify-content:space-between;transform:translateY(-100%);transition:transform .3s}
+        .nav.visible{transform:translateY(0)}
+        .nav-brand{font-weight:900;font-size:1.3rem;color:var(--primary)}
+        .nav-links{display:flex;gap:.8rem;align-items:center}
+        .nav-links a{text-decoration:none;font-weight:700;font-size:.85rem;color:var(--text);transition:color .3s}
+        .nav-links a:hover{color:var(--primary)}
+        .nav-cart-btn{position:relative;background:var(--primary);color:#fff;border:none;border-radius:50px;padding:.45rem 1rem;font-weight:800;font-size:.85rem;cursor:pointer;font-family:inherit;display:flex;align-items:center;gap:.3rem;transition:all .3s}
+        .nav-cart-btn:hover{background:var(--primary-dark);transform:scale(1.05)}
+
+        /* === CART PANEL === */
+        .cart-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:200;opacity:0;visibility:hidden;transition:all .3s}
+        .cart-overlay.open{opacity:1;visibility:visible}
+        .cart-panel{position:fixed;top:0;right:0;bottom:0;width:min(420px,90vw);background:#fff;z-index:201;transform:translateX(100%);transition:transform .35s cubic-bezier(.16,1,.3,1);display:flex;flex-direction:column;box-shadow:-5px 0 30px rgba(0,0,0,.15)}
+        .cart-panel.open{transform:translateX(0)}
+        .cart-header{padding:1.2rem 1.5rem;border-bottom:2px solid #f0f0f0;display:flex;align-items:center;justify-content:space-between}
+        .cart-header h2{font-size:1.2rem;font-weight:900;color:var(--primary-dark)}
+        .cart-close{width:36px;height:36px;border-radius:50%;border:none;background:#f3f4f6;color:var(--text);font-size:1.2rem;cursor:pointer;transition:all .2s;display:flex;align-items:center;justify-content:center}
+        .cart-close:hover{background:#e5e7eb;transform:rotate(90deg)}
+        .cart-body{flex:1;overflow-y:auto;padding:1rem 1.5rem}
+        .cart-empty{text-align:center;padding:3rem 1rem;color:var(--text-light)}
+        .cart-empty-icon{font-size:4rem;margin-bottom:1rem;opacity:.5}
+        .cart-empty p{font-size:.95rem;font-weight:600}
+        .cart-empty small{font-size:.8rem;color:var(--text-muted)}
+
+        .cart-item{display:flex;align-items:center;gap:.8rem;padding:.8rem 0;border-bottom:1px solid #f3f4f6;animation:cartSlideIn .3s ease}
+        @keyframes cartSlideIn{from{opacity:0;transform:translateX(20px)}to{opacity:1;transform:translateX(0)}}
+        .cart-item-icon{font-size:1.5rem}
+        .cart-item-info{flex:1;min-width:0}
+        .cart-item-name{font-weight:800;font-size:.85rem;line-height:1.2}
+        .cart-item-price-each{font-size:.7rem;color:var(--text-light)}
+        .cart-item-controls{display:flex;align-items:center;gap:.4rem}
+        .cart-qty-btn{width:28px;height:28px;border-radius:50%;border:2px solid #e5e7eb;background:#fff;font-size:1rem;font-weight:900;cursor:pointer;transition:all .2s;display:flex;align-items:center;justify-content:center;color:var(--text)}
+        .cart-qty-btn:hover{border-color:var(--primary);color:var(--primary)}
+        .cart-qty-btn.remove:hover{border-color:#ef4444;color:#ef4444}
+        .cart-item-qty{font-weight:900;font-size:.9rem;min-width:20px;text-align:center}
+        .cart-item-total{font-weight:900;font-size:.95rem;color:var(--primary);min-width:55px;text-align:right}
+
+        .cart-footer{padding:1.2rem 1.5rem;border-top:2px solid #f0f0f0;background:#fafafa}
+        .cart-total-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem}
+        .cart-total-label{font-size:1rem;font-weight:700;color:var(--text)}
+        .cart-total-label small{display:block;font-size:.75rem;color:var(--text-light);font-weight:600}
+        .cart-total-value{font-size:1.5rem;font-weight:900;color:var(--primary)}
+        .cart-total-value span{font-size:.7rem;font-weight:600}
+        .cart-order-btn{width:100%;padding:1rem;border-radius:16px;border:none;background:var(--whatsapp);color:#fff;font-size:1.05rem;font-weight:800;cursor:pointer;font-family:inherit;display:flex;align-items:center;justify-content:center;gap:.5rem;transition:all .3s;box-shadow:0 4px 20px rgba(37,211,102,.3)}
+        .cart-order-btn:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(37,211,102,.4)}
+        .cart-order-btn:active{transform:scale(.98)}
+        .cart-order-btn:disabled{opacity:.5;cursor:not-allowed;transform:none}
+        .cart-clear-btn{width:100%;padding:.6rem;border-radius:12px;border:2px solid #e5e7eb;background:#fff;color:var(--text-light);font-size:.8rem;font-weight:700;cursor:pointer;font-family:inherit;margin-top:.6rem;transition:all .2s}
+        .cart-clear-btn:hover{border-color:#ef4444;color:#ef4444}
+
+        /* === FLOATING CART BUTTON === */
+        .floating-cta{position:fixed;bottom:1.5rem;right:1.5rem;z-index:100;display:flex;flex-direction:column;gap:.7rem}
+        .floating-btn{width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.5rem;text-decoration:none;box-shadow:0 4px 20px rgba(0,0,0,.2);transition:all .3s;animation:popIn .5s ease-out both}
+        .floating-btn:nth-child(2){animation-delay:.1s}
+        .floating-btn:nth-child(3){animation-delay:.2s}
+        @keyframes popIn{from{transform:scale(0) rotate(-180deg);opacity:0}to{transform:scale(1) rotate(0);opacity:1}}
+        .floating-btn:hover{transform:scale(1.15)}
+        .floating-wa{background:var(--whatsapp);color:#fff}
+        .floating-ig{background:linear-gradient(135deg,#833ab4,#e1306c,#f77737);color:#fff}
+        .floating-cart{background:var(--secondary);color:#fff;position:relative;border:none;cursor:pointer}
+        @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(37,211,102,.6)}70%{box-shadow:0 0 0 15px rgba(37,211,102,0)}100%{box-shadow:0 0 0 0 rgba(37,211,102,0)}}
+        .floating-wa{animation:popIn .5s ease-out both,pulse 2s infinite 1s}
+
+        .cart-badge{position:absolute;top:-4px;right:-4px;background:#ef4444;color:#fff;font-size:.7rem;font-weight:900;width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;border:2px solid #fff;transition:all .3s}
+        .cart-badge.pop{animation:popBtn .3s ease}
+        .cart-badge:empty,.cart-badge[data-count="0"]{display:none}
+
+        /* === FOOTER === */
+        .footer{background:linear-gradient(135deg,#0d9488,#00a89d);color:#fff;text-align:center;padding:3rem 1rem;margin-top:2rem}
+        .footer-brand{font-size:2rem;font-weight:900;margin-bottom:.5rem}
+        .footer-info{font-size:.9rem;opacity:.85;margin-bottom:1.5rem;line-height:1.8}
+        .footer-buttons{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-bottom:1rem}
+        .footer-bottom{opacity:.6;font-size:.8rem;margin-top:1rem}
+
+        /* === REVEAL === */
+        .reveal{opacity:0;transform:translateY(30px);transition:all .6s cubic-bezier(.16,1,.3,1)}
+        .reveal.visible{opacity:1;transform:translateY(0)}
+        .menu-card:nth-child(1){transition-delay:0s}.menu-card:nth-child(2){transition-delay:.04s}
+        .menu-card:nth-child(3){transition-delay:.08s}.menu-card:nth-child(4){transition-delay:.04s}
+        .menu-card:nth-child(5){transition-delay:.08s}.menu-card:nth-child(6){transition-delay:.12s}
+        .menu-card:nth-child(7){transition-delay:.04s}.menu-card:nth-child(8){transition-delay:.08s}
+        .menu-card:nth-child(9){transition-delay:.12s}.menu-card:nth-child(10){transition-delay:.08s}
+        .menu-card:nth-child(11){transition-delay:.12s}.menu-card:nth-child(12){transition-delay:.16s}
+
+        /* Toast notification */
+        .toast{position:fixed;bottom:5rem;left:50%;transform:translateX(-50%) translateY(100px);background:var(--text);color:#fff;padding:.7rem 1.5rem;border-radius:50px;font-size:.85rem;font-weight:700;z-index:300;transition:all .4s cubic-bezier(.16,1,.3,1);opacity:0;pointer-events:none;white-space:nowrap}
+        .toast.show{transform:translateX(-50%) translateY(0);opacity:1}
+
+        @media(max-width:600px){
+            .hero-logo{font-size:2.8rem}.section-title{font-size:1.6rem}
+            .menu-grid{grid-template-columns:1fr}.tab{padding:.45rem .9rem;font-size:.75rem}
+            .nav-links a:not(.nav-cart-btn){display:none}.category-header{flex-direction:column;gap:.2rem}
+            .floating-cta{bottom:1rem;right:1rem}
+            .floating-btn{width:50px;height:50px}
+        }
+    </style>
+</head>
+<body>
+
+<!-- Nav -->
+<nav class="nav" id="navbar">
+    <div class="nav-brand">WEDRINK</div>
+    <div class="nav-links">
+        <a href="#menu">Meniu</a>
+        <a href="https://www.instagram.com/wedrink_kulsary" target="_blank">Instagram</a>
+        <button class="nav-cart-btn" onclick="toggleCart()">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/></svg>
+            <span id="navCartCount">0</span>
+        </button>
+    </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero" id="hero">
+    <div id="bubbles"></div>
+    <div class="hero-content">
+        <div class="hero-logo">WEDRINK</div>
+        <div class="hero-sub">Kulsary</div>
+        <div class="hero-tagline">
+            <div class="lang-kk">Жаңа ұнтақталған кофе & Мұздай сусындар</div>
+            <div class="lang-ru">Свежемолотый кофе & Холодные напитки</div>
+            <div class="lang-lat">Jaña ūntaqtalğan kofe & Mūzday susyndar</div>
+        </div>
+        <div class="hero-buttons">
+            <a href="#menu" class="btn btn-menu" style="background:rgba(255,255,255,.25);font-size:1.1rem;padding:1rem 2.5rem">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/></svg>
+                Тапсырыс беру
+            </a>
+            <a href="https://www.instagram.com/wedrink_kulsary" class="btn btn-instagram" target="_blank">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                Instagram
+            </a>
+        </div>
+    </div>
+    <div class="scroll-indicator">&#9660;</div>
+</section>
+
+<!-- Menu -->
+<section class="menu-section" id="menu">
+    <h2 class="section-title reveal">Біздің мәзір</h2>
+    <p class="section-title-ru reveal">Наше меню</p>
+    <p class="section-title-lat reveal">Bizdiñ mäzir</p>
+
+    <div class="tabs reveal">
+        <button class="tab active" data-cat="all">Барлығы<small>Все / Barlyğy</small></button>
+        <button class="tab" data-cat="coffee">Кофе<small>Кофе / Kofe</small></button>
+        <button class="tab" data-cat="milktea">Сүтті шайлар<small>Молочные чаи / Sütti şaylar</small></button>
+        <button class="tab" data-cat="icecream">Балмұздақтар<small>Мороженое / Balmūzdaqtar</small></button>
+        <button class="tab" data-cat="waffle">Вафлиі<small>Вафли / Vaflii</small></button>
+        <button class="tab" data-cat="fruit">Жеміс шәйлері<small>Фруктовые / Jemis şäyleri</small></button>
+        <button class="tab" data-cat="milkshake">Милкшейк<small>Милкшейк / Milkşeyk</small></button>
+    </div>
+
+    <!-- ===== COFFEE ===== -->
+    <div class="category-group active" data-category="coffee">
+        <div class="category-header reveal">
+            <h3>&#9749; Кофе</h3><span class="cat-ru">Кофе</span><span class="cat-lat">Kofe</span>
+        </div>
+        <div class="menu-grid" id="grid-coffee"></div>
+    </div>
+
+    <!-- ===== MILK TEAS ===== -->
+    <div class="category-group active" data-category="milktea">
+        <div class="category-header reveal">
+            <h3>&#127861; Сүтті шайлар</h3><span class="cat-ru">Молочные чаи</span><span class="cat-lat">Sütti şaylar</span>
+        </div>
+        <div class="menu-grid" id="grid-milktea"></div>
+    </div>
+
+    <!-- ===== ICE CREAM ===== -->
+    <div class="category-group active" data-category="icecream">
+        <div class="category-header reveal">
+            <h3>&#127846; Балмұздақтар</h3><span class="cat-ru">Мороженое и Сандэ</span><span class="cat-lat">Balmūzdaqtar</span>
+        </div>
+        <div class="menu-grid" id="grid-icecream"></div>
+    </div>
+
+    <!-- ===== WAFFLES ===== -->
+    <div class="category-group active" data-category="waffle">
+        <div class="category-header reveal">
+            <h3>&#129479; Вафлиі</h3><span class="cat-ru">Вафли</span><span class="cat-lat">Vaflii</span>
+        </div>
+        <div class="menu-grid" id="grid-waffle"></div>
+    </div>
+
+    <!-- ===== FRUIT TEAS ===== -->
+    <div class="category-group active" data-category="fruit">
+        <div class="category-header reveal">
+            <h3>&#127822; Жеміс-жидек шәйлері</h3><span class="cat-ru">Фруктовые напитки и чаи</span><span class="cat-lat">Jemis-jidek şäyleri</span>
+        </div>
+        <div class="menu-grid" id="grid-fruit"></div>
+    </div>
+
+    <!-- ===== MILKSHAKES ===== -->
+    <div class="category-group active" data-category="milkshake">
+        <div class="category-header reveal">
+            <h3>&#129371; Милкшейктер</h3><span class="cat-ru">Милкшейки</span><span class="cat-lat">Milkşeykter</span>
+        </div>
+        <div class="menu-grid" id="grid-milkshake"></div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer" id="contact">
+    <div class="footer-brand">WEDRINK Kulsary</div>
+    <div class="footer-info">
+        Жаңа ұнтақталған кофе, сүтті шайлар, балмұздақтар мен вафли<br>
+        Свежемолотый кофе, молочные чаи, мороженое и вафли<br>
+        Jaña ūntaqtalğan kofe, sütti şaylar, balmūzdaqtar men vafli<br><br>
+        Instagram: @wedrink_kulsary
+    </div>
+    <div class="footer-buttons">
+        <a href="https://www.instagram.com/wedrink_kulsary" class="btn btn-instagram" target="_blank">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            Instagram
+        </a>
+    </div>
+    <div class="footer-bottom">&copy; 2024 WEDRINK Kulsary. Барлық құқықтар қорғалған.</div>
+</footer>
+
+<!-- Floating buttons -->
+<div class="floating-cta">
+    <a href="https://www.instagram.com/wedrink_kulsary" class="floating-btn floating-ig" target="_blank" title="Instagram">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+    </a>
+    <a href="https://wa.me/77751512832" class="floating-btn floating-wa" target="_blank" title="WhatsApp">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    </a>
+    <button class="floating-btn floating-cart" onclick="toggleCart()" title="Себет / Корзина" id="floatingCartBtn">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/></svg>
+        <div class="cart-badge" id="floatingCartBadge"></div>
+    </button>
+</div>
+
+<!-- Cart overlay & panel -->
+<div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+<div class="cart-panel" id="cartPanel">
+    <div class="cart-header">
+        <h2>&#128722; Себет / Корзина</h2>
+        <button class="cart-close" onclick="toggleCart()">&times;</button>
+    </div>
+    <div class="cart-body" id="cartBody"></div>
+    <div class="cart-footer" id="cartFooter">
+        <div class="cart-total-row">
+            <div class="cart-total-label">Жалпы сома<small>Итого / Jalpy soma</small></div>
+            <div class="cart-total-value" id="cartTotal">0 <span>KZT</span></div>
+        </div>
+        <button class="cart-order-btn" id="cartOrderBtn" onclick="sendToWhatsApp()">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            WhatsApp арқылы тапсырыс беру
+        </button>
+        <button class="cart-clear-btn" onclick="clearCart()">&#128465; Себетті тазалау / Очистить</button>
+    </div>
+</div>
+
+<!-- Toast -->
+<div class="toast" id="toast"></div>
+
+<script>
+// ===== MENU DATA =====
+const menuData = [
+    // Coffee
+    {id:'c1',cat:'coffee',icon:'&#9749;',name:'Латте',ru:'Латте',lat:'Latte',price:600,badge:'hot'},
+    {id:'c2',cat:'coffee',icon:'&#9749;',name:'Капучино',ru:'Капучино',lat:'Kapuchino',price:600,badge:'hot'},
+    {id:'c3',cat:'coffee',icon:'&#9749;',name:'Классикалық американо',ru:'Классический американо',lat:'Klassikalyq amerikano',price:700},
+    {id:'c4',cat:'coffee',icon:'&#127818;',name:'Апельсинді американо',ru:'Американо с апельсином',lat:'Apelsindi amerikano',price:900,badge:'cold'},
+    {id:'c5',cat:'coffee',icon:'&#127815;',name:'Жүзімді американо',ru:'Американо с виноградом',lat:'Jüzimdi amerikano',price:900,badge:'cold'},
+    {id:'c6',cat:'coffee',icon:'&#129381;',name:'Латте кокос сүттімен',ru:'Латте с кокосовым молоком',lat:'Latte kokos süttimen',price:1200},
+    // Milk Teas
+    {id:'m1',cat:'milktea',icon:'&#129483;',name:'Қара қантты тапиока шәй',ru:'Молочный чай с тапиокой',lat:'Qara qantty tapioka şäy',price:900},
+    {id:'m2',cat:'milktea',icon:'&#129381;',name:'Кокос сүт шәй',ru:'Молочный чай с кокосом',lat:'Kokos süt şäy',price:900},
+    {id:'m3',cat:'milktea',icon:'&#127825;',name:'Шабдалы сүт шәй',ru:'Молочный чай с персиком',lat:'Şabdaly süt şäy',price:800},
+    {id:'m4',cat:'milktea',icon:'&#127861;',name:'Классикалық сүт шәй',ru:'Классический молочный чай',lat:'Klassikalyq süt şäy',price:800},
+    {id:'m5',cat:'milktea',icon:'&#127861;',name:'Қос дәмді сүт шәй',ru:'Двойной молочный чай',lat:'Qos dämdi süt şäy',price:900},
+    {id:'m6',cat:'milktea',icon:'&#128081;',name:'Тон тон сүт патшасы',ru:'Тон тон молочный босс',lat:'Ton ton süt patşasy',price:1200,badge:'new'},
+    {id:'m7',cat:'milktea',icon:'&#127850;',name:'Орео сүтті шайы',ru:'Молочный чай Орео',lat:'Oreo sütti şayy',price:900},
+    // Ice Cream
+    {id:'i1',cat:'icecream',icon:'&#127846;',name:'Қытырлақ балмұздақ',ru:'Мороженое в хрустящем рожке',lat:'Qytyrlaq balmūzdaq',price:300},
+    {id:'i2',cat:'icecream',icon:'&#127861;',name:'Қызыл бұршақ матча сандэ',ru:'Сандэ с красной фасолью и матчей',lat:'Qyzyl būrşaq matcha sande',price:650},
+    {id:'i3',cat:'icecream',icon:'&#127851;',name:'Шоколадты сандэ',ru:'Шоколадное сандэ',lat:'Şokoladty sande',price:650},
+    {id:'i4',cat:'icecream',icon:'&#127827;',name:'Құлпынай сандэ',ru:'Сандэ с клубникой',lat:'Qūlpynay sande',price:650},
+    {id:'i5',cat:'icecream',icon:'&#129744;',name:'Кекжидек сандэ',ru:'Сандэ с черникой',lat:'Kekjidek sande',price:650},
+    {id:'i6',cat:'icecream',icon:'&#127825;',name:'Шабдалы сандэ',ru:'Сандэ с персиком',lat:'Şabdaly sande',price:650},
+    {id:'i7',cat:'icecream',icon:'&#11088;',name:'Сандэ про макс',ru:'Сандэ про макс',lat:'Sande pro maks',price:650,badge:'new'},
+    {id:'i8',cat:'icecream',icon:'&#127850;',name:'Шоколадты Орео сандэ',ru:'Сандэ с шоколадом и Орео',lat:'Şokoladty Oreo sande',price:650},
+    {id:'i9',cat:'icecream',icon:'&#129389;',name:'Манго қарлы десерт',ru:'Манговый снежный десерт',lat:'Mango qarly desert',price:800},
+    {id:'i10',cat:'icecream',icon:'&#9749;',name:'Кофе қарлы десерт',ru:'Кофейный снежный десерт',lat:'Kofe qarly desert',price:650},
+    {id:'i11',cat:'icecream',icon:'&#127850;',name:'Шоколадты Орео қарлы десерт',ru:'Шоколадно-Орео снежный десерт',lat:'Şokoladty Oreo qarly desert',price:650},
+    {id:'i12',cat:'icecream',icon:'&#129483;',name:'Қара қантты тапиока сандэ',ru:'Сандэ с чёрным сахаром и тапиокой',lat:'Qara qantty tapioka sande',price:650},
+    // Waffles
+    {id:'w1',cat:'waffle',icon:'&#129479;',name:'Классикалық вафли',ru:'Классические вафли',lat:'Klassikalyq vafli',price:700},
+    {id:'w2',cat:'waffle',icon:'&#127851;',name:'Шоколадты вафли',ru:'Шоколадные вафли',lat:'Şokoladty vafli',price:700},
+    {id:'w3',cat:'waffle',icon:'&#127846;',name:'Вафли балмұздағы (классик)',ru:'Вафли с мороженым классические',lat:'Vafli balmūzdağy (klassik)',price:1000},
+    {id:'w4',cat:'waffle',icon:'&#127846;',name:'Вафли балмұздағы (шоколад)',ru:'Вафли с мороженым шоколадные',lat:'Vafli balmūzdağy (şokolad)',price:1000},
+    {id:'w5',cat:'waffle',icon:'&#127850;',name:'Вафли Орео (классик)',ru:'Вафли Орео классические',lat:'Vafli Oreo (klassik)',price:1350},
+    {id:'w6',cat:'waffle',icon:'&#127850;',name:'Вафли Орео (шоколад)',ru:'Вафли Орео шоколадные',lat:'Vafli Oreo (şokolad)',price:1350},
+    {id:'w7',cat:'waffle',icon:'&#127827;',name:'Вафли құлпынай (классик)',ru:'Вафли клубника классические',lat:'Vafli qūlpynay (klassik)',price:1350},
+    {id:'w8',cat:'waffle',icon:'&#127827;',name:'Вафли құлпынай (шоколад)',ru:'Вафли клубника шоколадные',lat:'Vafli qūlpynay (şokolad)',price:1350},
+    {id:'w9',cat:'waffle',icon:'&#129744;',name:'Вафли кекжидек (классик)',ru:'Вафли черника классические',lat:'Vafli kekjidek (klassik)',price:1350},
+    {id:'w10',cat:'waffle',icon:'&#129744;',name:'Вафли кекжидек (шоколад)',ru:'Вафли черника шоколадные',lat:'Vafli kekjidek (şokolad)',price:1350},
+    // Fruit
+    {id:'f1',cat:'fruit',icon:'&#127819;',name:'Мұздай лимонад',ru:'Освежающий лимонад',lat:'Mūzday limonad',price:400,badge:'cold'},
+    {id:'f2',cat:'fruit',icon:'&#127815;',name:'Жүзім-лимон шәй',ru:'Виноградно-лимонный чай',lat:'Jüzim-limon şäy',price:800},
+    {id:'f3',cat:'fruit',icon:'&#127818;',name:'Апельсин шырыны',ru:'Микс из свежего апельсина',lat:'Apelsin şyryny',price:1200},
+    {id:'f4',cat:'fruit',icon:'&#127820;',name:'Қос дәмді маракұйя коктейль',ru:'Двойной маракуйя коктейль',lat:'Qos dämdi marakūyya kokteyl',price:750},
+    {id:'f5',cat:'fruit',icon:'&#129389;',name:'Манго-грейпфрут коктейль',ru:'Манго-грейпфрутовый коктейль',lat:'Mango-greypfrut kokteyl',price:800},
+    {id:'f6',cat:'fruit',icon:'&#127818;',name:'Қуатты апельсин шырыны',ru:'Мощный апельсиновый сок',lat:'Quatty apelsin şyryny',price:500},
+    {id:'f7',cat:'fruit',icon:'&#127815;',name:'Алты жүзім шәй',ru:'Чай «Шесть виноградов»',lat:'Alty jüzim şäy',price:700},
+    {id:'f8',cat:'fruit',icon:'&#129744;',name:'Таңқурай-апельсин шәй',ru:'Малиново-апельсиновый чай',lat:'Tañquray-apelsin şäy',price:800},
+    {id:'f9',cat:'fruit',icon:'&#127822;',name:'Супер жеміс шәй',ru:'Супер-фруктовый чай',lat:'Super jemis şäy',price:1200,badge:'new'},
+    {id:'f10',cat:'fruit',icon:'&#127820;',name:'Мұздай маракұйя шәй',ru:'Освежающий маракуйя чай',lat:'Mūzday marakūyya şäy',price:600},
+    {id:'f11',cat:'fruit',icon:'&#129744;',name:'Кекжидек шәй',ru:'Черничный чай с крыжовником',lat:'Kekjidek şäy',price:650},
+    {id:'f12',cat:'fruit',icon:'&#127819;',name:'Лимонды қара шәй',ru:'Чёрный чай с лимоном',lat:'Limondy qara şäy',price:600},
+    // Milkshakes
+    {id:'s1',cat:'milkshake',icon:'&#127827;',name:'Құлпынай милкшейк',ru:'Клубничный милкшейк',lat:'Qūlpynay milkşeyk',price:650},
+    {id:'s2',cat:'milkshake',icon:'&#127861;',name:'Матча милкшейк',ru:'Матча милкшейк',lat:'Matcha milkşeyk',price:650},
+    {id:'s3',cat:'milkshake',icon:'&#129483;',name:'Боба милкшейк',ru:'Боба-милкшейк',lat:'Boba milkşeyk',price:650},
+];
+
+// ===== CART STATE =====
+let cart = {};
+
+function getCartCount() {
+    return Object.values(cart).reduce((s, c) => s + c, 0);
+}
+function getCartTotal() {
+    let total = 0;
+    for (const [id, qty] of Object.entries(cart)) {
+        const item = menuData.find(m => m.id === id);
+        if (item) total += item.price * qty;
+    }
+    return total;
+}
+
+// ===== RENDER MENU CARDS =====
+function renderMenu() {
+    const grids = {};
+    menuData.forEach(item => {
+        if (!grids[item.cat]) grids[item.cat] = [];
+        const badgeHTML = item.badge === 'hot' ? ' <span class="badge badge-hot">Ыстық</span>'
+            : item.badge === 'cold' ? ' <span class="badge badge-cold">Суық</span>'
+            : item.badge === 'new' ? ' <span class="badge badge-new">TOP</span>' : '';
+
+        const qty = cart[item.id] || 0;
+        const btnHTML = qty === 0
+            ? `<button class="add-btn" onclick="addToCart('${item.id}')" title="Себетке қосу">+</button>`
+            : `<div class="qty-control">
+                <button class="qty-btn minus-btn" onclick="removeFromCart('${item.id}')">-</button>
+                <span class="qty-num">${qty}</span>
+                <button class="qty-btn" onclick="addToCart('${item.id}')">+</button>
+               </div>`;
+
+        grids[item.cat].push(`
+            <div class="menu-card visible" data-cat="${item.cat}" data-id="${item.id}">
+                <div class="menu-card-icon">${item.icon}</div>
+                <div class="menu-card-info">
+                    <div class="menu-card-name">${item.name}${badgeHTML}</div>
+                    <div class="menu-card-ru">${item.ru}</div>
+                    <div class="menu-card-lat">${item.lat}</div>
+                </div>
+                <div class="menu-card-right">
+                    <div class="menu-card-price">${item.price}<span>KZT</span></div>
+                    ${btnHTML}
+                </div>
+            </div>
+        `);
+    });
+    for (const [cat, cards] of Object.entries(grids)) {
+        const grid = document.getElementById('grid-' + cat);
+        if (grid) grid.innerHTML = cards.join('');
+    }
+}
+
+// ===== CART ACTIONS =====
+function addToCart(id) {
+    cart[id] = (cart[id] || 0) + 1;
+    updateAll();
+    const item = menuData.find(m => m.id === id);
+    showToast(`+ ${item.name} себетке қосылды!`);
+}
+
+function removeFromCart(id) {
+    if (cart[id]) {
+        cart[id]--;
+        if (cart[id] <= 0) delete cart[id];
+    }
+    updateAll();
+}
+
+function clearCart() {
+    cart = {};
+    updateAll();
+    showToast('Себет тазаланды / Корзина очищена');
+}
+
+function updateAll() {
+    renderMenu();
+    renderCart();
+    updateBadges();
+    // re-observe for scroll animation
+    document.querySelectorAll('.menu-card').forEach(el => obs.observe(el));
+}
+
+function updateBadges() {
+    const count = getCartCount();
+    const fb = document.getElementById('floatingCartBadge');
+    const nc = document.getElementById('navCartCount');
+    fb.textContent = count || '';
+    nc.textContent = count;
+    if (count > 0) {
+        fb.classList.add('pop');
+        setTimeout(() => fb.classList.remove('pop'), 300);
+    }
+}
+
+// ===== RENDER CART PANEL =====
+function renderCart() {
+    const body = document.getElementById('cartBody');
+    const total = document.getElementById('cartTotal');
+    const orderBtn = document.getElementById('cartOrderBtn');
+    const entries = Object.entries(cart).filter(([, q]) => q > 0);
+
+    if (entries.length === 0) {
+        body.innerHTML = `<div class="cart-empty">
+            <div class="cart-empty-icon">&#128722;</div>
+            <p>Себет бос / Корзина пуста</p>
+            <small>Мәзірден сусын немесе десерт таңдаңыз<br>Выберите напиток или десерт из меню</small>
+        </div>`;
+        orderBtn.disabled = true;
+    } else {
+        let html = '';
+        entries.forEach(([id, qty]) => {
+            const item = menuData.find(m => m.id === id);
+            if (!item) return;
+            html += `<div class="cart-item">
+                <div class="cart-item-icon">${item.icon}</div>
+                <div class="cart-item-info">
+                    <div class="cart-item-name">${item.name}</div>
+                    <div class="cart-item-price-each">${item.price} KZT x ${qty}</div>
+                </div>
+                <div class="cart-item-controls">
+                    <button class="cart-qty-btn remove" onclick="removeFromCart('${id}')">-</button>
+                    <span class="cart-item-qty">${qty}</span>
+                    <button class="cart-qty-btn" onclick="addToCart('${id}')">+</button>
+                </div>
+                <div class="cart-item-total">${item.price * qty} &#8376;</div>
+            </div>`;
+        });
+        body.innerHTML = html;
+        orderBtn.disabled = false;
+    }
+    total.innerHTML = `${getCartTotal().toLocaleString()} <span>KZT</span>`;
+}
+
+// ===== CART TOGGLE =====
+function toggleCart() {
+    document.getElementById('cartOverlay').classList.toggle('open');
+    document.getElementById('cartPanel').classList.toggle('open');
+    document.body.style.overflow = document.getElementById('cartPanel').classList.contains('open') ? 'hidden' : '';
+}
+
+// ===== SEND TO WHATSAPP =====
+function sendToWhatsApp() {
+    const entries = Object.entries(cart).filter(([, q]) => q > 0);
+    if (entries.length === 0) return;
+
+    let msg = `Сәлем! WEDRINK Құлсарыдан тапсырыс бергім келеді:\n\n`;
+
+    entries.forEach(([id, qty]) => {
+        const item = menuData.find(m => m.id === id);
+        if (!item) return;
+        msg += `${item.name} - ${qty} x ${item.price} KZT = ${item.price * qty} KZT\n`;
+    });
+
+    msg += `\nЖалпы сома: ${getCartTotal().toLocaleString()} KZT`;
+
+    const encoded = encodeURIComponent(msg);
+    window.open(`https://wa.me/77751512832?text=${encoded}`, '_blank');
+
+    showToast('WhatsApp-қа жіберілуде...');
+}
+
+// ===== TOAST =====
+function showToast(text) {
+    const t = document.getElementById('toast');
+    t.textContent = text;
+    t.classList.add('show');
+    clearTimeout(t._timer);
+    t._timer = setTimeout(() => t.classList.remove('show'), 2500);
+}
+
+// ===== INIT =====
+renderMenu();
+renderCart();
+
+// Bubbles
+const bc = document.getElementById('bubbles');
+function cb() {
+    const b = document.createElement('div');
+    b.classList.add('bubble');
+    const s = Math.random() * 60 + 20;
+    b.style.width = s + 'px'; b.style.height = s + 'px';
+    b.style.left = Math.random() * 100 + '%';
+    b.style.animationDuration = Math.random() * 8 + 6 + 's';
+    b.style.animationDelay = Math.random() * 4 + 's';
+    bc.appendChild(b);
+    setTimeout(() => b.remove(), 16000);
+}
+setInterval(cb, 800);
+for (let i = 0; i < 8; i++) cb();
+
+// Scroll reveal
+const obs = new IntersectionObserver(e => {
+    e.forEach(en => { if (en.isIntersecting) en.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal,.menu-card').forEach(el => obs.observe(el));
+
+// Nav
+const nav = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+    nav.classList.toggle('visible', window.scrollY > window.innerHeight * 0.7);
+});
+
+// Tabs
+const tabs = document.querySelectorAll('.tab');
+const groups = document.querySelectorAll('.category-group');
+tabs.forEach(t => {
+    t.addEventListener('click', () => {
+        tabs.forEach(x => x.classList.remove('active'));
+        t.classList.add('active');
+        const c = t.dataset.cat;
+        groups.forEach(g => {
+            if (c === 'all' || g.dataset.category === c) {
+                g.classList.add('active');
+                g.querySelectorAll('.menu-card').forEach((card, i) => {
+                    card.classList.remove('visible');
+                    setTimeout(() => card.classList.add('visible'), i * 50);
+                });
+            } else {
+                g.classList.remove('active');
+            }
+        });
+    });
+});
+
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', function(e) {
+        e.preventDefault();
+        const t = document.querySelector(this.getAttribute('href'));
+        if (t) t.scrollIntoView({ behavior: 'smooth' });
+    });
+});
+</script>
+</body>
+</html>
