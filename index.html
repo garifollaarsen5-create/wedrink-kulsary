@@ -67,15 +67,15 @@
         .menu-card-price span{font-size:.55rem;font-weight:600;color:var(--primary-dark);display:block}
 
         /* Add to cart button */
-        .add-btn{width:38px;height:38px;border-radius:50%;border:2px solid var(--primary);background:#fff;color:var(--primary);font-size:1.3rem;font-weight:900;cursor:pointer;transition:all .3s;display:flex;align-items:center;justify-content:center;flex-shrink:0;line-height:1}
-        .add-btn:hover{background:var(--primary);color:#fff;transform:scale(1.15)}
-        .add-btn:active{transform:scale(.9)}
+        .add-btn{width:44px;height:44px;border-radius:50%;border:2px solid var(--primary);background:#fff;color:var(--primary);font-size:1.5rem;font-weight:900;cursor:pointer;transition:all .2s;display:flex;align-items:center;justify-content:center;flex-shrink:0;line-height:1;touch-action:manipulation;-webkit-tap-highlight-color:rgba(0,168,157,.3);user-select:none;-webkit-user-select:none}
+        .add-btn:hover{background:var(--primary);color:#fff;transform:scale(1.1)}
+        .add-btn:active{background:var(--primary);color:#fff;transform:scale(.9)}
         .add-btn.added{background:var(--primary);color:#fff;animation:popBtn .3s ease}
         @keyframes popBtn{0%{transform:scale(1)}50%{transform:scale(1.3)}100%{transform:scale(1)}}
 
         /* Qty control in card */
         .qty-control{display:flex;align-items:center;gap:.3rem}
-        .qty-btn{width:30px;height:30px;border-radius:50%;border:2px solid var(--primary);background:#fff;color:var(--primary);font-size:1.1rem;font-weight:900;cursor:pointer;transition:all .2s;display:flex;align-items:center;justify-content:center}
+        .qty-btn{width:36px;height:36px;border-radius:50%;border:2px solid var(--primary);background:#fff;color:var(--primary);font-size:1.2rem;font-weight:900;cursor:pointer;transition:all .2s;display:flex;align-items:center;justify-content:center;touch-action:manipulation;-webkit-tap-highlight-color:rgba(0,168,157,.3);user-select:none;-webkit-user-select:none}
         .qty-btn:hover{background:var(--primary);color:#fff}
         .qty-btn.minus-btn{border-color:#ef4444;color:#ef4444}
         .qty-btn.minus-btn:hover{background:#ef4444;color:#fff}
@@ -124,7 +124,7 @@
         .cart-item-name{font-weight:800;font-size:.85rem;line-height:1.2}
         .cart-item-price-each{font-size:.7rem;color:var(--text-light)}
         .cart-item-controls{display:flex;align-items:center;gap:.4rem}
-        .cart-qty-btn{width:28px;height:28px;border-radius:50%;border:2px solid #e5e7eb;background:#fff;font-size:1rem;font-weight:900;cursor:pointer;transition:all .2s;display:flex;align-items:center;justify-content:center;color:var(--text)}
+        .cart-qty-btn{width:34px;height:34px;border-radius:50%;border:2px solid #e5e7eb;background:#fff;font-size:1.1rem;font-weight:900;cursor:pointer;transition:all .2s;display:flex;align-items:center;justify-content:center;color:var(--text);touch-action:manipulation;-webkit-tap-highlight-color:rgba(0,0,0,.1)}
         .cart-qty-btn:hover{border-color:var(--primary);color:var(--primary)}
         .cart-qty-btn.remove:hover{border-color:#ef4444;color:#ef4444}
         .cart-item-qty{font-weight:900;font-size:.9rem;min-width:20px;text-align:center}
@@ -256,12 +256,12 @@
             <h3>&#9749; Кофе</h3><span class="cat-ru">Кофе</span><span class="cat-lat">Kofe</span>
         </div>
         <div class="menu-grid" id="grid-coffee">
-            <div class="menu-card visible" data-cat="coffee" data-id="c1"><div class="menu-card-icon">&#9749;</div><div class="menu-card-info"><div class="menu-card-name">Латте <span class="badge badge-hot">Ыстық</span></div><div class="menu-card-ru">Латте</div><div class="menu-card-lat">Latte</div></div><div class="menu-card-right"><div class="menu-card-price">600<span>KZT</span></div><button class="add-btn" title="Себетке қосу">+</button></div></div>
-            <div class="menu-card visible" data-cat="coffee" data-id="c2"><div class="menu-card-icon">&#9749;</div><div class="menu-card-info"><div class="menu-card-name">Капучино <span class="badge badge-hot">Ыстық</span></div><div class="menu-card-ru">Капучино</div><div class="menu-card-lat">Kapuchino</div></div><div class="menu-card-right"><div class="menu-card-price">600<span>KZT</span></div><button class="add-btn" title="Себетке қосу">+</button></div></div>
-            <div class="menu-card visible" data-cat="coffee" data-id="c3"><div class="menu-card-icon">&#9749;</div><div class="menu-card-info"><div class="menu-card-name">Классикалық американо</div><div class="menu-card-ru">Классический американо</div><div class="menu-card-lat">Klassikalyq amerikano</div></div><div class="menu-card-right"><div class="menu-card-price">700<span>KZT</span></div><button class="add-btn" title="Себетке қосу">+</button></div></div>
-            <div class="menu-card visible" data-cat="coffee" data-id="c4"><div class="menu-card-icon">&#127818;</div><div class="menu-card-info"><div class="menu-card-name">Апельсинді американо <span class="badge badge-cold">Суық</span></div><div class="menu-card-ru">Американо с апельсином</div><div class="menu-card-lat">Apelsindi amerikano</div></div><div class="menu-card-right"><div class="menu-card-price">900<span>KZT</span></div><button class="add-btn" title="Себетке қосу">+</button></div></div>
-            <div class="menu-card visible" data-cat="coffee" data-id="c5"><div class="menu-card-icon">&#127815;</div><div class="menu-card-info"><div class="menu-card-name">Жүзімді американо <span class="badge badge-cold">Суық</span></div><div class="menu-card-ru">Американо с виноградом</div><div class="menu-card-lat">Jüzimdi amerikano</div></div><div class="menu-card-right"><div class="menu-card-price">900<span>KZT</span></div><button class="add-btn" title="Себетке қосу">+</button></div></div>
-            <div class="menu-card visible" data-cat="coffee" data-id="c6"><div class="menu-card-icon">&#129381;</div><div class="menu-card-info"><div class="menu-card-name">Латте кокос сүттімен</div><div class="menu-card-ru">Латте с кокосовым молоком</div><div class="menu-card-lat">Latte kokos süttimen</div></div><div class="menu-card-right"><div class="menu-card-price">1200<span>KZT</span></div><button class="add-btn" title="Себетке қосу">+</button></div></div>
+            <div class="menu-card visible" data-cat="coffee" data-id="c1"><div class="menu-card-icon">&#9749;</div><div class="menu-card-info"><div class="menu-card-name">Латте <span class="badge badge-hot">Ыстық</span></div><div class="menu-card-ru">Латте</div><div class="menu-card-lat">Latte</div></div><div class="menu-card-right"><div class="menu-card-price">600<span>KZT</span></div><button class="add-btn" onclick="addToCart('c1')" title="Себетке қосу">+</button></div></div>
+            <div class="menu-card visible" data-cat="coffee" data-id="c2"><div class="menu-card-icon">&#9749;</div><div class="menu-card-info"><div class="menu-card-name">Капучино <span class="badge badge-hot">Ыстық</span></div><div class="menu-card-ru">Капучино</div><div class="menu-card-lat">Kapuchino</div></div><div class="menu-card-right"><div class="menu-card-price">600<span>KZT</span></div><button class="add-btn" onclick="addToCart('c2')" title="Себетке қосу">+</button></div></div>
+            <div class="menu-card visible" data-cat="coffee" data-id="c3"><div class="menu-card-icon">&#9749;</div><div class="menu-card-info"><div class="menu-card-name">Классикалық американо</div><div class="menu-card-ru">Классический американо</div><div class="menu-card-lat">Klassikalyq amerikano</div></div><div class="menu-card-right"><div class="menu-card-price">700<span>KZT</span></div><button class="add-btn" onclick="addToCart('c3')" title="Себетке қосу">+</button></div></div>
+            <div class="menu-card visible" data-cat="coffee" data-id="c4"><div class="menu-card-icon">&#127818;</div><div class="menu-card-info"><div class="menu-card-name">Апельсинді американо <span class="badge badge-cold">Суық</span></div><div class="menu-card-ru">Американо с апельсином</div><div class="menu-card-lat">Apelsindi amerikano</div></div><div class="menu-card-right"><div class="menu-card-price">900<span>KZT</span></div><button class="add-btn" onclick="addToCart('c4')" title="Себетке қосу">+</button></div></div>
+            <div class="menu-card visible" data-cat="coffee" data-id="c5"><div class="menu-card-icon">&#127815;</div><div class="menu-card-info"><div class="menu-card-name">Жүзімді американо <span class="badge badge-cold">Суық</span></div><div class="menu-card-ru">Американо с виноградом</div><div class="menu-card-lat">Jüzimdi amerikano</div></div><div class="menu-card-right"><div class="menu-card-price">900<span>KZT</span></div><button class="add-btn" onclick="addToCart('c5')" title="Себетке қосу">+</button></div></div>
+            <div class="menu-card visible" data-cat="coffee" data-id="c6"><div class="menu-card-icon">&#129381;</div><div class="menu-card-info"><div class="menu-card-name">Латте кокос сүттімен</div><div class="menu-card-ru">Латте с кокосовым молоком</div><div class="menu-card-lat">Latte kokos süttimen</div></div><div class="menu-card-right"><div class="menu-card-price">1200<span>KZT</span></div><button class="add-btn" onclick="addToCart('c6')" title="Себетке қосу">+</button></div></div>
         </div>
     </div>
 
@@ -271,13 +271,13 @@
             <h3>&#127861; Сүтті шайлар</h3><span class="cat-ru">Молочные чаи</span><span class="cat-lat">Sütti şaylar</span>
         </div>
         <div class="menu-grid" id="grid-milktea">
-            <div class="menu-card visible" data-cat="milktea" data-id="m1"><div class="menu-card-icon">&#129483;</div><div class="menu-card-info"><div class="menu-card-name">Қара қантты тапиока шәй</div><div class="menu-card-ru">Молочный чай с тапиокой</div><div class="menu-card-lat">Qara qantty tapioka şäy</div></div><div class="menu-card-right"><div class="menu-card-price">900<span>KZT</span></div><button class="add-btn" title="Себетке қосу">+</button></div></div>
-            <div class="menu-card visible" data-cat="milktea" data-id="m2"><div class="menu-card-icon">&#129381;</div><div class="menu-card-info"><div class="menu-card-name">Кокос сүт шәй</div><div class="menu-card-ru">Молочный чай с кокосом</div><div class="menu-card-lat">Kokos süt şäy</div></div><div class="menu-card-right"><div class="menu-card-price">900<span>KZT</span></div><button class="add-btn" title="Себетке қосу">+</button></div></div>
-            <div class="menu-card visible" data-cat="milktea" data-id="m3"><div class="menu-card-icon">&#127825;</div><div class="menu-card-info"><div class="menu-card-name">Шабдалы сүт шәй</div><div class="menu-card-ru">Молочный чай с персиком</div><div class="menu-card-lat">Şabdaly süt şäy</div></div><div class="menu-card-right"><div class="menu-card-price">800<span>KZT</span></div><button class="add-btn" title="Себетке қосу">+</button></div></div>
-            <div class="menu-card visible" data-cat="milktea" data-id="m4"><div class="menu-card-icon">&#127861;</div><div class="menu-card-info"><div class="menu-card-name">Классикалық сүт шәй</div><div class="menu-card-ru">Классический молочный чай</div><div class="menu-card-lat">Klassikalyq süt şäy</div></div><div class="menu-card-right"><div class="menu-card-price">800<span>KZT</span></div><button class="add-btn" title="Себетке қосу">+</button></div></div>
-            <div class="menu-card visible" data-cat="milktea" data-id="m5"><div class="menu-card-icon">&#127861;</div><div class="menu-card-info"><div class="menu-card-name">Қос дәмді сүт шәй</div><div class="menu-card-ru">Двойной молочный чай</div><div class="menu-card-lat">Qos dämdi süt şäy</div></div><div class="menu-card-right"><div class="menu-card-price">900<span>KZT</span></div><button class="add-btn" title="Себетке қосу">+</button></div></div>
-            <div class="menu-card visible" data-cat="milktea" data-id="m6"><div class="menu-card-icon">&#128081;</div><div class="menu-card-info"><div class="menu-card-name">Тон тон сүт патшасы <span class="badge badge-new">TOP</span></div><div class="menu-card-ru">Тон тон молочный босс</div><div class="menu-card-lat">Ton ton süt patşasy</div></div><div class="menu-card-right"><div class="menu-card-price">1200<span>KZT</span></div><button class="add-btn" title="Себетке қосу">+</button></div></div>
-            <div class="menu-card visible" data-cat="milktea" data-id="m7"><div class="menu-card-icon">&#127850;</div><div class="menu-card-info"><div class="menu-card-name">Орео сүтті шайы</div><div class="menu-card-ru">Молочный чай Орео</div><div class="menu-card-lat">Oreo sütti şayy</div></div><div class="menu-card-right"><div class="menu-card-price">900<span>KZT</span></div><button class="add-btn" title="Себетке қосу">+</button></div></div>
+            <div class="menu-card visible" data-cat="milktea" data-id="m1"><div class="menu-card-icon">&#129483;</div><div class="menu-card-info"><div class="menu-card-name">Қара қантты тапиока шәй</div><div class="menu-card-ru">Молочный чай с тапиокой</div><div class="menu-card-lat">Qara qantty tapioka şäy</div></div><div class="menu-card-right"><div class="menu-card-price">900<span>KZT</span></div><button class="add-btn" onclick="addToCart('m1')" title="Себетке қосу">+</button></div></div>
+            <div class="menu-card visible" data-cat="milktea" data-id="m2"><div class="menu-card-icon">&#129381;</div><div class="menu-card-info"><div class="menu-card-name">Кокос сүт шәй</div><div class="menu-card-ru">Молочный чай с кокосом</div><div class="menu-card-lat">Kokos süt şäy</div></div><div class="menu-card-right"><div class="menu-card-price">900<span>KZT</span></div><button class="add-btn" onclick="addToCart('m2')" title="Себетке қосу">+</button></div></div>
+            <div class="menu-card visible" data-cat="milktea" data-id="m3"><div class="menu-card-icon">&#127825;</div><div class="menu-card-info"><div class="menu-card-name">Шабдалы сүт шәй</div><div class="menu-card-ru">Молочный чай с персиком</div><div class="menu-card-lat">Şabdaly süt şäy</div></div><div class="menu-card-right"><div class="menu-card-price">800<span>KZT</span></div><button class="add-btn" onclick="addToCart('m3')" title="Себетке қосу">+</button></div></div>
+            <div class="menu-card visible" data-cat="milktea" data-id="m4"><div class="menu-card-icon">&#127861;</div><div class="menu-card-info"><div class="menu-card-name">Классикалық сүт шәй</div><div class="menu-card-ru">Классический молочный чай</div><div class="menu-card-lat">Klassikalyq süt şäy</div></div><div class="menu-card-right"><div class="menu-card-price">800<span>KZT</span></div><button class="add-btn" onclick="addToCart('m4')" title="Себетке қосу">+</button></div></div>
+            <div class="menu-card visible" data-cat="milktea" data-id="m5"><div class="menu-card-icon">&#127861;</div><div class="menu-card-info"><div class="menu-card-name">Қос дәмді сүт шәй</div><div class="menu-card-ru">Двойной молочный чай</div><div class="menu-card-lat">Qos dämdi süt şäy</div></div><div class="menu-card-right"><div class="menu-card-price">900<span>KZT</span></div><button class="add-btn" onclick="addToCart('m5')" title="Себетке қосу">+</button></div></div>
+            <div class="menu-card visible" data-cat="milktea" data-id="m6"><div class="menu-card-icon">&#128081;</div><div class="menu-card-info"><div class="menu-card-name">Тон тон сүт патшасы <span class="badge badge-new">TOP</span></div><div class="menu-card-ru">Тон тон молочный босс</div><div class="menu-card-lat">Ton ton süt patşasy</div></div><div class="menu-card-right"><div class="menu-card-price">1200<span>KZT</span></div><button class="add-btn" onclick="addToCart('m6')" title="Себетке қосу">+</button></div></div>
+            <div class="menu-card visible" data-cat="milktea" data-id="m7"><div class="menu-card-icon">&#127850;</div><div class="menu-card-info"><div class="menu-card-name">Орео сүтті шайы</div><div class="menu-card-ru">Молочный чай Орео</div><div class="menu-card-lat">Oreo sütti şayy</div></div><div class="menu-card-right"><div class="menu-card-price">900<span>KZT</span></div><button class="add-btn" onclick="addToCart('m7')" title="Себетке қосу">+</button></div></div>
         </div>
     </div>
 
@@ -287,18 +287,18 @@
             <h3>&#127846; Балмұздақтар</h3><span class="cat-ru">Мороженое и Сандэ</span><span class="cat-lat">Balmūzdaqtar</span>
         </div>
         <div class="menu-grid" id="grid-icecream">
-            <div class="menu-card visible" data-cat="icecream" data-id="i1"><div class="menu-card-icon">&#127846;</div><div class="menu-card-info"><div class="menu-card-name">Қытырлақ балмұздақ</div><div class="menu-card-ru">Мороженое в хрустящем рожке</div><div class="menu-card-lat">Qytyrlaq balmūzdaq</div></div><div class="menu-card-right"><div class="menu-card-price">300<span>KZT</span></div><button class="add-btn" title="Себетке қосу">+</button></div></div>
-            <div class="menu-card visible" data-cat="icecream" data-id="i2"><div class="menu-card-icon">&#127861;</div><div class="menu-card-info"><div class="menu-card-name">Қызыл бұршақ матча сандэ</div><div class="menu-card-ru">Сандэ с красной фасолью и матчей</div><div class="menu-card-lat">Qyzyl būrşaq matcha sande</div></div><div class="menu-card-right"><div class="menu-card-price">650<span>KZT</span></div><button class="add-btn" title="Себетке қосу">+</button></div></div>
-            <div class="menu-card visible" data-cat="icecream" data-id="i3"><div class="menu-card-icon">&#127851;</div><div class="menu-card-info"><div class="menu-card-name">Шоколадты сандэ</div><div class="menu-card-ru">Шоколадное сандэ</div><div class="menu-card-lat">Şokoladty sande</div></div><div class="menu-card-right"><div class="menu-card-price">650<span>KZT</span></div><button class="add-btn" title="Себетке қосу">+</button></div></div>
-            <div class="menu-card visible" data-cat="icecream" data-id="i4"><div class="menu-card-icon">&#127827;</div><div class="menu-card-info"><div class="menu-card-name">Құлпынай сандэ</div><div class="menu-card-ru">Сандэ с клубникой</div><div class="menu-card-lat">Qūlpynay sande</div></div><div class="menu-card-right"><div class="menu-card-price">650<span>KZT</span></div><button class="add-btn" title="Себетке қосу">+</button></div></div>
-            <div class="menu-card visible" data-cat="icecream" data-id="i5"><div class="menu-card-icon">&#129744;</div><div class="menu-card-info"><div class="menu-card-name">Кекжидек сандэ</div><div class="menu-card-ru">Сандэ с черникой</div><div class="menu-card-lat">Kekjidek sande</div></div><div class="menu-card-right"><div class="menu-card-price">650<span>KZT</span></div><button class="add-btn" title="Себетке қосу">+</button></div></div>
-            <div class="menu-card visible" data-cat="icecream" data-id="i6"><div class="menu-card-icon">&#127825;</div><div class="menu-card-info"><div class="menu-card-name">Шабдалы сандэ</div><div class="menu-card-ru">Сандэ с персиком</div><div class="menu-card-lat">Şabdaly sande</div></div><div class="menu-card-right"><div class="menu-card-price">650<span>KZT</span></div><button class="add-btn" title="Себетке қосу">+</button></div></div>
-            <div class="menu-card visible" data-cat="icecream" data-id="i7"><div class="menu-card-icon">&#11088;</div><div class="menu-card-info"><div class="menu-card-name">Сандэ про макс <span class="badge badge-new">TOP</span></div><div class="menu-card-ru">Сандэ про макс</div><div class="menu-card-lat">Sande pro maks</div></div><div class="menu-card-right"><div class="menu-card-price">650<span>KZT</span></div><button class="add-btn" title="Себетке қосу">+</button></div></div>
-            <div class="menu-card visible" data-cat="icecream" data-id="i8"><div class="menu-card-icon">&#127850;</div><div class="menu-card-info"><div class="menu-card-name">Шоколадты Орео сандэ</div><div class="menu-card-ru">Сандэ с шоколадом и Орео</div><div class="menu-card-lat">Şokoladty Oreo sande</div></div><div class="menu-card-right"><div class="menu-card-price">650<span>KZT</span></div><button class="add-btn" title="Себетке қосу">+</button></div></div>
-            <div class="menu-card visible" data-cat="icecream" data-id="i9"><div class="menu-card-icon">&#129389;</div><div class="menu-card-info"><div class="menu-card-name">Манго қарлы десерт</div><div class="menu-card-ru">Манговый снежный десерт</div><div class="menu-card-lat">Mango qarly desert</div></div><div class="menu-card-right"><div class="menu-card-price">800<span>KZT</span></div><button class="add-btn" title="Себетке қосу">+</button></div></div>
-            <div class="menu-card visible" data-cat="icecream" data-id="i10"><div class="menu-card-icon">&#9749;</div><div class="menu-card-info"><div class="menu-card-name">Кофе қарлы десерт</div><div class="menu-card-ru">Кофейный снежный десерт</div><div class="menu-card-lat">Kofe qarly desert</div></div><div class="menu-card-right"><div class="menu-card-price">650<span>KZT</span></div><button class="add-btn" title="Себетке қосу">+</button></div></div>
-            <div class="menu-card visible" data-cat="icecream" data-id="i11"><div class="menu-card-icon">&#127850;</div><div class="menu-card-info"><div class="menu-card-name">Шоколадты Орео қарлы десерт</div><div class="menu-card-ru">Шоколадно-Орео снежный десерт</div><div class="menu-card-lat">Şokoladty Oreo qarly desert</div></div><div class="menu-card-right"><div class="menu-card-price">650<span>KZT</span></div><button class="add-btn" title="Себетке қосу">+</button></div></div>
-            <div class="menu-card visible" data-cat="icecream" data-id="i12"><div class="menu-card-icon">&#129483;</div><div class="menu-card-info"><div class="menu-card-name">Қара қантты тапиока сандэ</div><div class="menu-card-ru">Сандэ с чёрным сахаром и тапиокой</div><div class="menu-card-lat">Qara qantty tapioka sande</div></div><div class="menu-card-right"><div class="menu-card-price">650<span>KZT</span></div><button class="add-btn" title="Себетке қосу">+</button></div></div>
+            <div class="menu-card visible" data-cat="icecream" data-id="i1"><div class="menu-card-icon">&#127846;</div><div class="menu-card-info"><div class="menu-card-name">Қытырлақ балмұздақ</div><div class="menu-card-ru">Мороженое в хрустящем рожке</div><div class="menu-card-lat">Qytyrlaq balmūzdaq</div></div><div class="menu-card-right"><div class="menu-card-price">300<span>KZT</span></div><button class="add-btn" onclick="addToCart('i1')" title="Себетке қосу">+</button></div></div>
+            <div class="menu-card visible" data-cat="icecream" data-id="i2"><div class="menu-card-icon">&#127861;</div><div class="menu-card-info"><div class="menu-card-name">Қызыл бұршақ матча сандэ</div><div class="menu-card-ru">Сандэ с красной фасолью и матчей</div><div class="menu-card-lat">Qyzyl būrşaq matcha sande</div></div><div class="menu-card-right"><div class="menu-card-price">650<span>KZT</span></div><button class="add-btn" onclick="addToCart('i2')" title="Себетке қосу">+</button></div></div>
+            <div class="menu-card visible" data-cat="icecream" data-id="i3"><div class="menu-card-icon">&#127851;</div><div class="menu-card-info"><div class="menu-card-name">Шоколадты сандэ</div><div class="menu-card-ru">Шоколадное сандэ</div><div class="menu-card-lat">Şokoladty sande</div></div><div class="menu-card-right"><div class="menu-card-price">650<span>KZT</span></div><button class="add-btn" onclick="addToCart('i3')" title="Себетке қосу">+</button></div></div>
+            <div class="menu-card visible" data-cat="icecream" data-id="i4"><div class="menu-card-icon">&#127827;</div><div class="menu-card-info"><div class="menu-card-name">Құлпынай сандэ</div><div class="menu-card-ru">Сандэ с клубникой</div><div class="menu-card-lat">Qūlpynay sande</div></div><div class="menu-card-right"><div class="menu-card-price">650<span>KZT</span></div><button class="add-btn" onclick="addToCart('i4')" title="Себетке қосу">+</button></div></div>
+            <div class="menu-card visible" data-cat="icecream" data-id="i5"><div class="menu-card-icon">&#129744;</div><div class="menu-card-info"><div class="menu-card-name">Кекжидек сандэ</div><div class="menu-card-ru">Сандэ с черникой</div><div class="menu-card-lat">Kekjidek sande</div></div><div class="menu-card-right"><div class="menu-card-price">650<span>KZT</span></div><button class="add-btn" onclick="addToCart('i5')" title="Себетке қосу">+</button></div></div>
+            <div class="menu-card visible" data-cat="icecream" data-id="i6"><div class="menu-card-icon">&#127825;</div><div class="menu-card-info"><div class="menu-card-name">Шабдалы сандэ</div><div class="menu-card-ru">Сандэ с персиком</div><div class="menu-card-lat">Şabdaly sande</div></div><div class="menu-card-right"><div class="menu-card-price">650<span>KZT</span></div><button class="add-btn" onclick="addToCart('i6')" title="Себетке қосу">+</button></div></div>
+            <div class="menu-card visible" data-cat="icecream" data-id="i7"><div class="menu-card-icon">&#11088;</div><div class="menu-card-info"><div class="menu-card-name">Сандэ про макс <span class="badge badge-new">TOP</span></div><div class="menu-card-ru">Сандэ про макс</div><div class="menu-card-lat">Sande pro maks</div></div><div class="menu-card-right"><div class="menu-card-price">650<span>KZT</span></div><button class="add-btn" onclick="addToCart('i7')" title="Себетке қосу">+</button></div></div>
+            <div class="menu-card visible" data-cat="icecream" data-id="i8"><div class="menu-card-icon">&#127850;</div><div class="menu-card-info"><div class="menu-card-name">Шоколадты Орео сандэ</div><div class="menu-card-ru">Сандэ с шоколадом и Орео</div><div class="menu-card-lat">Şokoladty Oreo sande</div></div><div class="menu-card-right"><div class="menu-card-price">650<span>KZT</span></div><button class="add-btn" onclick="addToCart('i8')" title="Себетке қосу">+</button></div></div>
+            <div class="menu-card visible" data-cat="icecream" data-id="i9"><div class="menu-card-icon">&#129389;</div><div class="menu-card-info"><div class="menu-card-name">Манго қарлы десерт</div><div class="menu-card-ru">Манговый снежный десерт</div><div class="menu-card-lat">Mango qarly desert</div></div><div class="menu-card-right"><div class="menu-card-price">800<span>KZT</span></div><button class="add-btn" onclick="addToCart('i9')" title="Себетке қосу">+</button></div></div>
+            <div class="menu-card visible" data-cat="icecream" data-id="i10"><div class="menu-card-icon">&#9749;</div><div class="menu-card-info"><div class="menu-card-name">Кофе қарлы десерт</div><div class="menu-card-ru">Кофейный снежный десерт</div><div class="menu-card-lat">Kofe qarly desert</div></div><div class="menu-card-right"><div class="menu-card-price">650<span>KZT</span></div><button class="add-btn" onclick="addToCart('i10')" title="Себетке қосу">+</button></div></div>
+            <div class="menu-card visible" data-cat="icecream" data-id="i11"><div class="menu-card-icon">&#127850;</div><div class="menu-card-info"><div class="menu-card-name">Шоколадты Орео қарлы десерт</div><div class="menu-card-ru">Шоколадно-Орео снежный десерт</div><div class="menu-card-lat">Şokoladty Oreo qarly desert</div></div><div class="menu-card-right"><div class="menu-card-price">650<span>KZT</span></div><button class="add-btn" onclick="addToCart('i11')" title="Себетке қосу">+</button></div></div>
+            <div class="menu-card visible" data-cat="icecream" data-id="i12"><div class="menu-card-icon">&#129483;</div><div class="menu-card-info"><div class="menu-card-name">Қара қантты тапиока сандэ</div><div class="menu-card-ru">Сандэ с чёрным сахаром и тапиокой</div><div class="menu-card-lat">Qara qantty tapioka sande</div></div><div class="menu-card-right"><div class="menu-card-price">650<span>KZT</span></div><button class="add-btn" onclick="addToCart('i12')" title="Себетке қосу">+</button></div></div>
         </div>
     </div>
 
@@ -308,16 +308,16 @@
             <h3>&#129479; Вафлиі</h3><span class="cat-ru">Вафли</span><span class="cat-lat">Vaflii</span>
         </div>
         <div class="menu-grid" id="grid-waffle">
-            <div class="menu-card visible" data-cat="waffle" data-id="w1"><div class="menu-card-icon">&#129479;</div><div class="menu-card-info"><div class="menu-card-name">Классикалық вафли</div><div class="menu-card-ru">Классические вафли</div><div class="menu-card-lat">Klassikalyq vafli</div></div><div class="menu-card-right"><div class="menu-card-price">700<span>KZT</span></div><button class="add-btn" title="Себетке қосу">+</button></div></div>
-            <div class="menu-card visible" data-cat="waffle" data-id="w2"><div class="menu-card-icon">&#127851;</div><div class="menu-card-info"><div class="menu-card-name">Шоколадты вафли</div><div class="menu-card-ru">Шоколадные вафли</div><div class="menu-card-lat">Şokoladty vafli</div></div><div class="menu-card-right"><div class="menu-card-price">700<span>KZT</span></div><button class="add-btn" title="Себетке қосу">+</button></div></div>
-            <div class="menu-card visible" data-cat="waffle" data-id="w3"><div class="menu-card-icon">&#127846;</div><div class="menu-card-info"><div class="menu-card-name">Вафли балмұздағы (классик)</div><div class="menu-card-ru">Вафли с мороженым классические</div><div class="menu-card-lat">Vafli balmūzdağy (klassik)</div></div><div class="menu-card-right"><div class="menu-card-price">1000<span>KZT</span></div><button class="add-btn" title="Себетке қосу">+</button></div></div>
-            <div class="menu-card visible" data-cat="waffle" data-id="w4"><div class="menu-card-icon">&#127846;</div><div class="menu-card-info"><div class="menu-card-name">Вафли балмұздағы (шоколад)</div><div class="menu-card-ru">Вафли с мороженым шоколадные</div><div class="menu-card-lat">Vafli balmūzdağy (şokolad)</div></div><div class="menu-card-right"><div class="menu-card-price">1000<span>KZT</span></div><button class="add-btn" title="Себетке қосу">+</button></div></div>
-            <div class="menu-card visible" data-cat="waffle" data-id="w5"><div class="menu-card-icon">&#127850;</div><div class="menu-card-info"><div class="menu-card-name">Вафли Орео (классик)</div><div class="menu-card-ru">Вафли Орео классические</div><div class="menu-card-lat">Vafli Oreo (klassik)</div></div><div class="menu-card-right"><div class="menu-card-price">1350<span>KZT</span></div><button class="add-btn" title="Себетке қосу">+</button></div></div>
-            <div class="menu-card visible" data-cat="waffle" data-id="w6"><div class="menu-card-icon">&#127850;</div><div class="menu-card-info"><div class="menu-card-name">Вафли Орео (шоколад)</div><div class="menu-card-ru">Вафли Орео шоколадные</div><div class="menu-card-lat">Vafli Oreo (şokolad)</div></div><div class="menu-card-right"><div class="menu-card-price">1350<span>KZT</span></div><button class="add-btn" title="Себетке қосу">+</button></div></div>
-            <div class="menu-card visible" data-cat="waffle" data-id="w7"><div class="menu-card-icon">&#127827;</div><div class="menu-card-info"><div class="menu-card-name">Вафли құлпынай (классик)</div><div class="menu-card-ru">Вафли клубника классические</div><div class="menu-card-lat">Vafli qūlpynay (klassik)</div></div><div class="menu-card-right"><div class="menu-card-price">1350<span>KZT</span></div><button class="add-btn" title="Себетке қосу">+</button></div></div>
-            <div class="menu-card visible" data-cat="waffle" data-id="w8"><div class="menu-card-icon">&#127827;</div><div class="menu-card-info"><div class="menu-card-name">Вафли құлпынай (шоколад)</div><div class="menu-card-ru">Вафли клубника шоколадные</div><div class="menu-card-lat">Vafli qūlpynay (şokolad)</div></div><div class="menu-card-right"><div class="menu-card-price">1350<span>KZT</span></div><button class="add-btn" title="Себетке қосу">+</button></div></div>
-            <div class="menu-card visible" data-cat="waffle" data-id="w9"><div class="menu-card-icon">&#129744;</div><div class="menu-card-info"><div class="menu-card-name">Вафли кекжидек (классик)</div><div class="menu-card-ru">Вафли черника классические</div><div class="menu-card-lat">Vafli kekjidek (klassik)</div></div><div class="menu-card-right"><div class="menu-card-price">1350<span>KZT</span></div><button class="add-btn" title="Себетке қосу">+</button></div></div>
-            <div class="menu-card visible" data-cat="waffle" data-id="w10"><div class="menu-card-icon">&#129744;</div><div class="menu-card-info"><div class="menu-card-name">Вафли кекжидек (шоколад)</div><div class="menu-card-ru">Вафли черника шоколадные</div><div class="menu-card-lat">Vafli kekjidek (şokolad)</div></div><div class="menu-card-right"><div class="menu-card-price">1350<span>KZT</span></div><button class="add-btn" title="Себетке қосу">+</button></div></div>
+            <div class="menu-card visible" data-cat="waffle" data-id="w1"><div class="menu-card-icon">&#129479;</div><div class="menu-card-info"><div class="menu-card-name">Классикалық вафли</div><div class="menu-card-ru">Классические вафли</div><div class="menu-card-lat">Klassikalyq vafli</div></div><div class="menu-card-right"><div class="menu-card-price">700<span>KZT</span></div><button class="add-btn" onclick="addToCart('w1')" title="Себетке қосу">+</button></div></div>
+            <div class="menu-card visible" data-cat="waffle" data-id="w2"><div class="menu-card-icon">&#127851;</div><div class="menu-card-info"><div class="menu-card-name">Шоколадты вафли</div><div class="menu-card-ru">Шоколадные вафли</div><div class="menu-card-lat">Şokoladty vafli</div></div><div class="menu-card-right"><div class="menu-card-price">700<span>KZT</span></div><button class="add-btn" onclick="addToCart('w2')" title="Себетке қосу">+</button></div></div>
+            <div class="menu-card visible" data-cat="waffle" data-id="w3"><div class="menu-card-icon">&#127846;</div><div class="menu-card-info"><div class="menu-card-name">Вафли балмұздағы (классик)</div><div class="menu-card-ru">Вафли с мороженым классические</div><div class="menu-card-lat">Vafli balmūzdağy (klassik)</div></div><div class="menu-card-right"><div class="menu-card-price">1000<span>KZT</span></div><button class="add-btn" onclick="addToCart('w3')" title="Себетке қосу">+</button></div></div>
+            <div class="menu-card visible" data-cat="waffle" data-id="w4"><div class="menu-card-icon">&#127846;</div><div class="menu-card-info"><div class="menu-card-name">Вафли балмұздағы (шоколад)</div><div class="menu-card-ru">Вафли с мороженым шоколадные</div><div class="menu-card-lat">Vafli balmūzdağy (şokolad)</div></div><div class="menu-card-right"><div class="menu-card-price">1000<span>KZT</span></div><button class="add-btn" onclick="addToCart('w4')" title="Себетке қосу">+</button></div></div>
+            <div class="menu-card visible" data-cat="waffle" data-id="w5"><div class="menu-card-icon">&#127850;</div><div class="menu-card-info"><div class="menu-card-name">Вафли Орео (классик)</div><div class="menu-card-ru">Вафли Орео классические</div><div class="menu-card-lat">Vafli Oreo (klassik)</div></div><div class="menu-card-right"><div class="menu-card-price">1350<span>KZT</span></div><button class="add-btn" onclick="addToCart('w5')" title="Себетке қосу">+</button></div></div>
+            <div class="menu-card visible" data-cat="waffle" data-id="w6"><div class="menu-card-icon">&#127850;</div><div class="menu-card-info"><div class="menu-card-name">Вафли Орео (шоколад)</div><div class="menu-card-ru">Вафли Орео шоколадные</div><div class="menu-card-lat">Vafli Oreo (şokolad)</div></div><div class="menu-card-right"><div class="menu-card-price">1350<span>KZT</span></div><button class="add-btn" onclick="addToCart('w6')" title="Себетке қосу">+</button></div></div>
+            <div class="menu-card visible" data-cat="waffle" data-id="w7"><div class="menu-card-icon">&#127827;</div><div class="menu-card-info"><div class="menu-card-name">Вафли құлпынай (классик)</div><div class="menu-card-ru">Вафли клубника классические</div><div class="menu-card-lat">Vafli qūlpynay (klassik)</div></div><div class="menu-card-right"><div class="menu-card-price">1350<span>KZT</span></div><button class="add-btn" onclick="addToCart('w7')" title="Себетке қосу">+</button></div></div>
+            <div class="menu-card visible" data-cat="waffle" data-id="w8"><div class="menu-card-icon">&#127827;</div><div class="menu-card-info"><div class="menu-card-name">Вафли құлпынай (шоколад)</div><div class="menu-card-ru">Вафли клубника шоколадные</div><div class="menu-card-lat">Vafli qūlpynay (şokolad)</div></div><div class="menu-card-right"><div class="menu-card-price">1350<span>KZT</span></div><button class="add-btn" onclick="addToCart('w8')" title="Себетке қосу">+</button></div></div>
+            <div class="menu-card visible" data-cat="waffle" data-id="w9"><div class="menu-card-icon">&#129744;</div><div class="menu-card-info"><div class="menu-card-name">Вафли кекжидек (классик)</div><div class="menu-card-ru">Вафли черника классические</div><div class="menu-card-lat">Vafli kekjidek (klassik)</div></div><div class="menu-card-right"><div class="menu-card-price">1350<span>KZT</span></div><button class="add-btn" onclick="addToCart('w9')" title="Себетке қосу">+</button></div></div>
+            <div class="menu-card visible" data-cat="waffle" data-id="w10"><div class="menu-card-icon">&#129744;</div><div class="menu-card-info"><div class="menu-card-name">Вафли кекжидек (шоколад)</div><div class="menu-card-ru">Вафли черника шоколадные</div><div class="menu-card-lat">Vafli kekjidek (şokolad)</div></div><div class="menu-card-right"><div class="menu-card-price">1350<span>KZT</span></div><button class="add-btn" onclick="addToCart('w10')" title="Себетке қосу">+</button></div></div>
         </div>
     </div>
 
@@ -327,18 +327,18 @@
             <h3>&#127822; Жеміс-жидек шәйлері</h3><span class="cat-ru">Фруктовые напитки и чаи</span><span class="cat-lat">Jemis-jidek şäyleri</span>
         </div>
         <div class="menu-grid" id="grid-fruit">
-            <div class="menu-card visible" data-cat="fruit" data-id="f1"><div class="menu-card-icon">&#127819;</div><div class="menu-card-info"><div class="menu-card-name">Мұздай лимонад <span class="badge badge-cold">Суық</span></div><div class="menu-card-ru">Освежающий лимонад</div><div class="menu-card-lat">Mūzday limonad</div></div><div class="menu-card-right"><div class="menu-card-price">400<span>KZT</span></div><button class="add-btn" title="Себетке қосу">+</button></div></div>
-            <div class="menu-card visible" data-cat="fruit" data-id="f2"><div class="menu-card-icon">&#127815;</div><div class="menu-card-info"><div class="menu-card-name">Жүзім-лимон шәй</div><div class="menu-card-ru">Виноградно-лимонный чай</div><div class="menu-card-lat">Jüzim-limon şäy</div></div><div class="menu-card-right"><div class="menu-card-price">800<span>KZT</span></div><button class="add-btn" title="Себетке қосу">+</button></div></div>
-            <div class="menu-card visible" data-cat="fruit" data-id="f3"><div class="menu-card-icon">&#127818;</div><div class="menu-card-info"><div class="menu-card-name">Апельсин шырыны</div><div class="menu-card-ru">Микс из свежего апельсина</div><div class="menu-card-lat">Apelsin şyryny</div></div><div class="menu-card-right"><div class="menu-card-price">1200<span>KZT</span></div><button class="add-btn" title="Себетке қосу">+</button></div></div>
-            <div class="menu-card visible" data-cat="fruit" data-id="f4"><div class="menu-card-icon">&#127820;</div><div class="menu-card-info"><div class="menu-card-name">Қос дәмді маракұйя коктейль</div><div class="menu-card-ru">Двойной маракуйя коктейль</div><div class="menu-card-lat">Qos dämdi marakūyya kokteyl</div></div><div class="menu-card-right"><div class="menu-card-price">750<span>KZT</span></div><button class="add-btn" title="Себетке қосу">+</button></div></div>
-            <div class="menu-card visible" data-cat="fruit" data-id="f5"><div class="menu-card-icon">&#129389;</div><div class="menu-card-info"><div class="menu-card-name">Манго-грейпфрут коктейль</div><div class="menu-card-ru">Манго-грейпфрутовый коктейль</div><div class="menu-card-lat">Mango-greypfrut kokteyl</div></div><div class="menu-card-right"><div class="menu-card-price">800<span>KZT</span></div><button class="add-btn" title="Себетке қосу">+</button></div></div>
-            <div class="menu-card visible" data-cat="fruit" data-id="f6"><div class="menu-card-icon">&#127818;</div><div class="menu-card-info"><div class="menu-card-name">Қуатты апельсин шырыны</div><div class="menu-card-ru">Мощный апельсиновый сок</div><div class="menu-card-lat">Quatty apelsin şyryny</div></div><div class="menu-card-right"><div class="menu-card-price">500<span>KZT</span></div><button class="add-btn" title="Себетке қосу">+</button></div></div>
-            <div class="menu-card visible" data-cat="fruit" data-id="f7"><div class="menu-card-icon">&#127815;</div><div class="menu-card-info"><div class="menu-card-name">Алты жүзім шәй</div><div class="menu-card-ru">Чай «Шесть виноградов»</div><div class="menu-card-lat">Alty jüzim şäy</div></div><div class="menu-card-right"><div class="menu-card-price">700<span>KZT</span></div><button class="add-btn" title="Себетке қосу">+</button></div></div>
-            <div class="menu-card visible" data-cat="fruit" data-id="f8"><div class="menu-card-icon">&#129744;</div><div class="menu-card-info"><div class="menu-card-name">Таңқурай-апельсин шәй</div><div class="menu-card-ru">Малиново-апельсиновый чай</div><div class="menu-card-lat">Tañquray-apelsin şäy</div></div><div class="menu-card-right"><div class="menu-card-price">800<span>KZT</span></div><button class="add-btn" title="Себетке қосу">+</button></div></div>
-            <div class="menu-card visible" data-cat="fruit" data-id="f9"><div class="menu-card-icon">&#127822;</div><div class="menu-card-info"><div class="menu-card-name">Супер жеміс шәй <span class="badge badge-new">TOP</span></div><div class="menu-card-ru">Супер-фруктовый чай</div><div class="menu-card-lat">Super jemis şäy</div></div><div class="menu-card-right"><div class="menu-card-price">1200<span>KZT</span></div><button class="add-btn" title="Себетке қосу">+</button></div></div>
-            <div class="menu-card visible" data-cat="fruit" data-id="f10"><div class="menu-card-icon">&#127820;</div><div class="menu-card-info"><div class="menu-card-name">Мұздай маракұйя шәй</div><div class="menu-card-ru">Освежающий маракуйя чай</div><div class="menu-card-lat">Mūzday marakūyya şäy</div></div><div class="menu-card-right"><div class="menu-card-price">600<span>KZT</span></div><button class="add-btn" title="Себетке қосу">+</button></div></div>
-            <div class="menu-card visible" data-cat="fruit" data-id="f11"><div class="menu-card-icon">&#129744;</div><div class="menu-card-info"><div class="menu-card-name">Кекжидек шәй</div><div class="menu-card-ru">Черничный чай с крыжовником</div><div class="menu-card-lat">Kekjidek şäy</div></div><div class="menu-card-right"><div class="menu-card-price">650<span>KZT</span></div><button class="add-btn" title="Себетке қосу">+</button></div></div>
-            <div class="menu-card visible" data-cat="fruit" data-id="f12"><div class="menu-card-icon">&#127819;</div><div class="menu-card-info"><div class="menu-card-name">Лимонды қара шәй</div><div class="menu-card-ru">Чёрный чай с лимоном</div><div class="menu-card-lat">Limondy qara şäy</div></div><div class="menu-card-right"><div class="menu-card-price">600<span>KZT</span></div><button class="add-btn" title="Себетке қосу">+</button></div></div>
+            <div class="menu-card visible" data-cat="fruit" data-id="f1"><div class="menu-card-icon">&#127819;</div><div class="menu-card-info"><div class="menu-card-name">Мұздай лимонад <span class="badge badge-cold">Суық</span></div><div class="menu-card-ru">Освежающий лимонад</div><div class="menu-card-lat">Mūzday limonad</div></div><div class="menu-card-right"><div class="menu-card-price">400<span>KZT</span></div><button class="add-btn" onclick="addToCart('f1')" title="Себетке қосу">+</button></div></div>
+            <div class="menu-card visible" data-cat="fruit" data-id="f2"><div class="menu-card-icon">&#127815;</div><div class="menu-card-info"><div class="menu-card-name">Жүзім-лимон шәй</div><div class="menu-card-ru">Виноградно-лимонный чай</div><div class="menu-card-lat">Jüzim-limon şäy</div></div><div class="menu-card-right"><div class="menu-card-price">800<span>KZT</span></div><button class="add-btn" onclick="addToCart('f2')" title="Себетке қосу">+</button></div></div>
+            <div class="menu-card visible" data-cat="fruit" data-id="f3"><div class="menu-card-icon">&#127818;</div><div class="menu-card-info"><div class="menu-card-name">Апельсин шырыны</div><div class="menu-card-ru">Микс из свежего апельсина</div><div class="menu-card-lat">Apelsin şyryny</div></div><div class="menu-card-right"><div class="menu-card-price">1200<span>KZT</span></div><button class="add-btn" onclick="addToCart('f3')" title="Себетке қосу">+</button></div></div>
+            <div class="menu-card visible" data-cat="fruit" data-id="f4"><div class="menu-card-icon">&#127820;</div><div class="menu-card-info"><div class="menu-card-name">Қос дәмді маракұйя коктейль</div><div class="menu-card-ru">Двойной маракуйя коктейль</div><div class="menu-card-lat">Qos dämdi marakūyya kokteyl</div></div><div class="menu-card-right"><div class="menu-card-price">750<span>KZT</span></div><button class="add-btn" onclick="addToCart('f4')" title="Себетке қосу">+</button></div></div>
+            <div class="menu-card visible" data-cat="fruit" data-id="f5"><div class="menu-card-icon">&#129389;</div><div class="menu-card-info"><div class="menu-card-name">Манго-грейпфрут коктейль</div><div class="menu-card-ru">Манго-грейпфрутовый коктейль</div><div class="menu-card-lat">Mango-greypfrut kokteyl</div></div><div class="menu-card-right"><div class="menu-card-price">800<span>KZT</span></div><button class="add-btn" onclick="addToCart('f5')" title="Себетке қосу">+</button></div></div>
+            <div class="menu-card visible" data-cat="fruit" data-id="f6"><div class="menu-card-icon">&#127818;</div><div class="menu-card-info"><div class="menu-card-name">Қуатты апельсин шырыны</div><div class="menu-card-ru">Мощный апельсиновый сок</div><div class="menu-card-lat">Quatty apelsin şyryny</div></div><div class="menu-card-right"><div class="menu-card-price">500<span>KZT</span></div><button class="add-btn" onclick="addToCart('f6')" title="Себетке қосу">+</button></div></div>
+            <div class="menu-card visible" data-cat="fruit" data-id="f7"><div class="menu-card-icon">&#127815;</div><div class="menu-card-info"><div class="menu-card-name">Алты жүзім шәй</div><div class="menu-card-ru">Чай «Шесть виноградов»</div><div class="menu-card-lat">Alty jüzim şäy</div></div><div class="menu-card-right"><div class="menu-card-price">700<span>KZT</span></div><button class="add-btn" onclick="addToCart('f7')" title="Себетке қосу">+</button></div></div>
+            <div class="menu-card visible" data-cat="fruit" data-id="f8"><div class="menu-card-icon">&#129744;</div><div class="menu-card-info"><div class="menu-card-name">Таңқурай-апельсин шәй</div><div class="menu-card-ru">Малиново-апельсиновый чай</div><div class="menu-card-lat">Tañquray-apelsin şäy</div></div><div class="menu-card-right"><div class="menu-card-price">800<span>KZT</span></div><button class="add-btn" onclick="addToCart('f8')" title="Себетке қосу">+</button></div></div>
+            <div class="menu-card visible" data-cat="fruit" data-id="f9"><div class="menu-card-icon">&#127822;</div><div class="menu-card-info"><div class="menu-card-name">Супер жеміс шәй <span class="badge badge-new">TOP</span></div><div class="menu-card-ru">Супер-фруктовый чай</div><div class="menu-card-lat">Super jemis şäy</div></div><div class="menu-card-right"><div class="menu-card-price">1200<span>KZT</span></div><button class="add-btn" onclick="addToCart('f9')" title="Себетке қосу">+</button></div></div>
+            <div class="menu-card visible" data-cat="fruit" data-id="f10"><div class="menu-card-icon">&#127820;</div><div class="menu-card-info"><div class="menu-card-name">Мұздай маракұйя шәй</div><div class="menu-card-ru">Освежающий маракуйя чай</div><div class="menu-card-lat">Mūzday marakūyya şäy</div></div><div class="menu-card-right"><div class="menu-card-price">600<span>KZT</span></div><button class="add-btn" onclick="addToCart('f10')" title="Себетке қосу">+</button></div></div>
+            <div class="menu-card visible" data-cat="fruit" data-id="f11"><div class="menu-card-icon">&#129744;</div><div class="menu-card-info"><div class="menu-card-name">Кекжидек шәй</div><div class="menu-card-ru">Черничный чай с крыжовником</div><div class="menu-card-lat">Kekjidek şäy</div></div><div class="menu-card-right"><div class="menu-card-price">650<span>KZT</span></div><button class="add-btn" onclick="addToCart('f11')" title="Себетке қосу">+</button></div></div>
+            <div class="menu-card visible" data-cat="fruit" data-id="f12"><div class="menu-card-icon">&#127819;</div><div class="menu-card-info"><div class="menu-card-name">Лимонды қара шәй</div><div class="menu-card-ru">Чёрный чай с лимоном</div><div class="menu-card-lat">Limondy qara şäy</div></div><div class="menu-card-right"><div class="menu-card-price">600<span>KZT</span></div><button class="add-btn" onclick="addToCart('f12')" title="Себетке қосу">+</button></div></div>
         </div>
     </div>
 
@@ -348,9 +348,9 @@
             <h3>&#129371; Милкшейктер</h3><span class="cat-ru">Милкшейки</span><span class="cat-lat">Milkşeykter</span>
         </div>
         <div class="menu-grid" id="grid-milkshake">
-            <div class="menu-card visible" data-cat="milkshake" data-id="s1"><div class="menu-card-icon">&#127827;</div><div class="menu-card-info"><div class="menu-card-name">Құлпынай милкшейк</div><div class="menu-card-ru">Клубничный милкшейк</div><div class="menu-card-lat">Qūlpynay milkşeyk</div></div><div class="menu-card-right"><div class="menu-card-price">650<span>KZT</span></div><button class="add-btn" title="Себетке қосу">+</button></div></div>
-            <div class="menu-card visible" data-cat="milkshake" data-id="s2"><div class="menu-card-icon">&#127861;</div><div class="menu-card-info"><div class="menu-card-name">Матча милкшейк</div><div class="menu-card-ru">Матча милкшейк</div><div class="menu-card-lat">Matcha milkşeyk</div></div><div class="menu-card-right"><div class="menu-card-price">650<span>KZT</span></div><button class="add-btn" title="Себетке қосу">+</button></div></div>
-            <div class="menu-card visible" data-cat="milkshake" data-id="s3"><div class="menu-card-icon">&#129483;</div><div class="menu-card-info"><div class="menu-card-name">Боба милкшейк</div><div class="menu-card-ru">Боба-милкшейк</div><div class="menu-card-lat">Boba milkşeyk</div></div><div class="menu-card-right"><div class="menu-card-price">650<span>KZT</span></div><button class="add-btn" title="Себетке қосу">+</button></div></div>
+            <div class="menu-card visible" data-cat="milkshake" data-id="s1"><div class="menu-card-icon">&#127827;</div><div class="menu-card-info"><div class="menu-card-name">Құлпынай милкшейк</div><div class="menu-card-ru">Клубничный милкшейк</div><div class="menu-card-lat">Qūlpynay milkşeyk</div></div><div class="menu-card-right"><div class="menu-card-price">650<span>KZT</span></div><button class="add-btn" onclick="addToCart('s1')" title="Себетке қосу">+</button></div></div>
+            <div class="menu-card visible" data-cat="milkshake" data-id="s2"><div class="menu-card-icon">&#127861;</div><div class="menu-card-info"><div class="menu-card-name">Матча милкшейк</div><div class="menu-card-ru">Матча милкшейк</div><div class="menu-card-lat">Matcha milkşeyk</div></div><div class="menu-card-right"><div class="menu-card-price">650<span>KZT</span></div><button class="add-btn" onclick="addToCart('s2')" title="Себетке қосу">+</button></div></div>
+            <div class="menu-card visible" data-cat="milkshake" data-id="s3"><div class="menu-card-icon">&#129483;</div><div class="menu-card-info"><div class="menu-card-name">Боба милкшейк</div><div class="menu-card-ru">Боба-милкшейк</div><div class="menu-card-lat">Boba milkşeyk</div></div><div class="menu-card-right"><div class="menu-card-price">650<span>KZT</span></div><button class="add-btn" onclick="addToCart('s3')" title="Себетке қосу">+</button></div></div>
         </div>
     </div>
 </section>
@@ -412,18 +412,6 @@
 <div class="toast" id="toast"></div>
 
 <script>
-// Polyfill for Element.closest (iOS Safari < 9, old Android)
-if (!Element.prototype.closest) {
-    Element.prototype.closest = function(s) {
-        var el = this;
-        do {
-            if (el.matches ? el.matches(s) : el.msMatchesSelector(s)) return el;
-            el = el.parentElement || el.parentNode;
-        } while (el !== null && el.nodeType === 1);
-        return null;
-    };
-}
-
 // ===== MENU DATA (ES5 compatible) =====
 var menuData = [
     {id:'c1',cat:'coffee',icon:'&#9749;',name:'Латте',ru:'Латте',lat:'Latte',price:600,badge:'hot'},
@@ -519,15 +507,16 @@ function updateCardButton(id) {
         if (qty === 0) {
             var btn = document.createElement('button');
             btn.className = 'add-btn';
+            btn.setAttribute('onclick', "addToCart('" + id + "')");
             btn.title = 'Себетке қосу';
             btn.textContent = '+';
             right.appendChild(btn);
         } else {
             var ctrl = document.createElement('div');
             ctrl.className = 'qty-control';
-            ctrl.innerHTML = '<button class="qty-btn minus-btn">−</button>' +
+            ctrl.innerHTML = '<button class="qty-btn minus-btn" onclick="removeFromCart(\'' + id + '\')">−</button>' +
                 '<span class="qty-num">' + qty + '</span>' +
-                '<button class="qty-btn">+</button>';
+                '<button class="qty-btn" onclick="addToCart(\'' + id + '\')">+</button>';
             right.appendChild(ctrl);
         }
     }
@@ -615,9 +604,9 @@ function renderCart() {
                 '<div class="cart-item-price-each">' + item.price.toLocaleString() + ' ₸ x ' + qty + '</div>' +
                 '</div>' +
                 '<div class="cart-item-controls">' +
-                '<button class="cart-qty-btn remove">−</button>' +
+                '<button class="cart-qty-btn remove" onclick="removeFromCart(\'' + entries[i].id + '\')">−</button>' +
                 '<span class="cart-item-qty">' + qty + '</span>' +
-                '<button class="cart-qty-btn">+</button>' +
+                '<button class="cart-qty-btn" onclick="addToCart(\'' + entries[i].id + '\')">+</button>' +
                 '</div>' +
                 '<div class="cart-item-total">' + (item.price * qty).toLocaleString() + ' ₸</div>' +
                 '</div>';
@@ -717,12 +706,22 @@ for (var ti = 0; ti < tabBtns.length; ti++) {
             for (var j = 0; j < tabBtns.length; j++) tabBtns[j].classList.remove('active');
             t.classList.add('active');
             var c = t.getAttribute('data-cat');
+            var firstVisible = null;
             for (var gi = 0; gi < catGroups.length; gi++) {
                 if (c === 'all' || catGroups[gi].getAttribute('data-category') === c) {
                     catGroups[gi].classList.add('active');
+                    if (!firstVisible) firstVisible = catGroups[gi];
                 } else {
                     catGroups[gi].classList.remove('active');
                 }
+            }
+            // Scroll to the selected category
+            if (firstVisible && c !== 'all') {
+                setTimeout(function() {
+                    firstVisible.scrollIntoView({behavior: 'smooth', block: 'start'});
+                    // Offset for fixed nav
+                    setTimeout(function() { window.scrollBy(0, -70); }, 400);
+                }, 50);
             }
         });
     })(tabBtns[ti]);
@@ -740,49 +739,14 @@ for (var ai = 0; ai < anchors.length; ai++) {
     })(anchors[ai]);
 }
 
-// Event delegation for cart buttons (robust on all mobile browsers)
-document.addEventListener('click', function(e) {
-    var btn = e.target.closest('.add-btn');
-    if (btn) {
-        e.preventDefault();
-        e.stopPropagation();
-        var card = btn.closest('.menu-card');
-        if (card) addToCart(card.getAttribute('data-id'));
+// Fallback: touchstart for iOS devices where click may not fire on dynamically created buttons
+document.addEventListener('touchend', function(e) {
+    var t = e.target;
+    if (t.classList && t.classList.contains('add-btn') && t.getAttribute('onclick')) {
+        // Let inline onclick handle it, just ensure the tap registers
         return;
     }
-    var qtyBtn = e.target.closest('.qty-btn');
-    if (qtyBtn) {
-        e.preventDefault();
-        e.stopPropagation();
-        var card2 = qtyBtn.closest('.menu-card');
-        if (card2) {
-            var itemId = card2.getAttribute('data-id');
-            if (qtyBtn.classList.contains('minus-btn')) {
-                removeFromCart(itemId);
-            } else {
-                addToCart(itemId);
-            }
-        }
-        return;
-    }
-    var cartQtyBtn = e.target.closest('.cart-qty-btn');
-    if (cartQtyBtn) {
-        e.preventDefault();
-        e.stopPropagation();
-        var cartItem = cartQtyBtn.closest('.cart-item');
-        if (cartItem) {
-            var cid = cartItem.getAttribute('data-cart-id');
-            if (cid) {
-                if (cartQtyBtn.classList.contains('remove')) {
-                    removeFromCart(cid);
-                } else {
-                    addToCart(cid);
-                }
-            }
-        }
-        return;
-    }
-});
+}, {passive: true});
 </script>
 </body>
 </html>
