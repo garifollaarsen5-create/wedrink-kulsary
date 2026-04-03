@@ -412,6 +412,17 @@
 <div class="toast" id="toast"></div>
 
 <script>
+// Polyfill for Element.closest (old Android/iOS)
+if (!Element.prototype.closest) {
+    Element.prototype.closest = function(s) {
+        var el = this;
+        do { if (el.matches(s)) return el; el = el.parentElement || el.parentNode; } while (el !== null && el.nodeType === 1);
+        return null;
+    };
+}
+if (!Element.prototype.matches) {
+    Element.prototype.matches = Element.prototype.msMatchesSelector || Element.prototype.webkitMatchesSelector;
+}
 // ===== MENU DATA (ES5 compatible) =====
 var menuData = [
     {id:'c1',cat:'coffee',icon:'&#9749;',name:'Латте',ru:'Латте',lat:'Latte',price:600,badge:'hot'},
@@ -739,14 +750,44 @@ for (var ai = 0; ai < anchors.length; ai++) {
     })(anchors[ai]);
 }
 
-// Fallback: touchstart for iOS devices where click may not fire on dynamically created buttons
-document.addEventListener('touchend', function(e) {
+// Event delegation as primary mobile handler (backup for inline onclick)
+document.addEventListener('click', function(e) {
     var t = e.target;
-    if (t.classList && t.classList.contains('add-btn') && t.getAttribute('onclick')) {
-        // Let inline onclick handle it, just ensure the tap registers
-        return;
+    // Handle add-btn clicks
+    if (t.classList && t.classList.contains('add-btn')) {
+        var card = t.closest('.menu-card');
+        if (card) {
+            var id = card.getAttribute('data-id');
+            if (id) { e.preventDefault(); e.stopPropagation(); addToCart(id); return; }
+        }
     }
-}, {passive: true});
+    // Handle qty-btn clicks (+ and -)
+    if (t.classList && t.classList.contains('qty-btn')) {
+        var card = t.closest('.menu-card');
+        if (card) {
+            var id = card.getAttribute('data-id');
+            if (id) {
+                e.preventDefault(); e.stopPropagation();
+                if (t.classList.contains('minus-btn')) { removeFromCart(id); }
+                else { addToCart(id); }
+                return;
+            }
+        }
+    }
+    // Handle cart qty buttons
+    if (t.classList && t.classList.contains('cart-qty-btn')) {
+        var cartItem = t.closest('.cart-item');
+        if (cartItem) {
+            var id = cartItem.getAttribute('data-cart-id');
+            if (id) {
+                e.preventDefault(); e.stopPropagation();
+                if (t.classList.contains('remove')) { removeFromCart(id); }
+                else { addToCart(id); }
+                return;
+            }
+        }
+    }
+}, true);
 </script>
 </body>
 </html>
