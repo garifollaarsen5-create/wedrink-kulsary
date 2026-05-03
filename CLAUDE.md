@@ -9,7 +9,7 @@
 ## Маңызды деректер
 
 **WhatsApp:** `+77025536060` (wa.me/+77025536060)
-**Instagram:** `https://www.instagram.com/wedrink_kulsary`
+**Instagram:** `https://www.instagram.com/wedrink.marmeladpark`
 **Жұмыс уақыты:** 11:00 – 00:00
 **Мекенжай:** ул. Шафиха Избасова 232 (Мармелад парк, 2 этаж)
 
