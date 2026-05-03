@@ -798,16 +798,23 @@
                 var item = menuData[mi];
                 if (item.cat !== cat.id) continue;
 
-                var badgeHtml = '';
-                if (item.badge === 'hot') badgeHtml = ' <span class="badge badge-hot">Ыстық</span>';
-                else if (item.badge === 'cold') badgeHtml = ' <span class="badge badge-cold">Суық</span>';
-                else if (item.badge === 'new') badgeHtml = ' <span class="badge badge-new">TOP</span>';
+                var badgeKk = '', badgeRu = '';
+                if (item.badge === 'hot') {
+                    badgeKk = ' <span class="badge badge-hot">Ыстық</span>';
+                    badgeRu = ' <span class="badge badge-hot">Горячий</span>';
+                } else if (item.badge === 'cold') {
+                    badgeKk = ' <span class="badge badge-cold">Суық</span>';
+                    badgeRu = ' <span class="badge badge-cold">Холодный</span>';
+                } else if (item.badge === 'new') {
+                    badgeKk = ' <span class="badge badge-new">TOP</span>';
+                    badgeRu = ' <span class="badge badge-new">TOP</span>';
+                }
 
                 html += '<div class="menu-card" data-cat="' + item.cat + '" data-id="' + item.id + '">';
                 html += '<div class="menu-card-icon">' + item.icon + '</div>';
                 html += '<div class="menu-card-info">';
-                html += '<div class="menu-card-name">' + item.name + badgeHtml + '</div>';
-                html += '<div class="menu-card-ru">' + item.ru + '</div>';
+                html += '<div class="menu-card-name">' + item.name + badgeKk + '</div>';
+                html += '<div class="menu-card-ru">' + item.ru + badgeRu + '</div>';
                 html += '<div class="menu-card-lat">' + item.lat + '</div>';
                 html += '</div>';
                 html += '<div class="menu-card-right">';
