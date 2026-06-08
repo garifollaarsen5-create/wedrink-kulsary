@@ -1,0 +1,12 @@
+*.MP4
+*.mp4
+*.mov
+*.MOV
+_slides/
+_board/
+_frames/
+_lbl/
+img/
+_newmenu.txt
+.playwright-mcp/
+*.png
